@@ -1,0 +1,1 @@
+Activities of the Application to be contained in this package
