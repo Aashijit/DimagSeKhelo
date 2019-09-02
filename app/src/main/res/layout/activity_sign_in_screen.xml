@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.SignUpScreen">
+    tools:context=".Activity.SignInScreen">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -14,7 +14,7 @@
         android:padding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.000"
+        app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp">
 
         <LinearLayout
@@ -27,19 +27,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_arrow_back_black_24dp"
-                android:onClick="signUpBackButton" />
+                android:onClick="signInBackButton">
+            </android.support.v7.widget.AppCompatButton>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="138dp"
                 android:layout_height="wrap_content"
-                android:text="REGISTER AND PLAY"
+                android:paddingLeft="30dp"
+                android:text="SIGN IN"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,40 +54,23 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@color/lightgrey"
-        android:padding="10dp"
-        >
-
-        <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_stay_current_portrait_black_24dp"
-            android:hint="Mobile no"
-            android:drawablePadding="8dp"
-            android:inputType="number"
-            android:layout_marginBottom="8dp"
-            />
-
-    </android.support.design.widget.TextInputLayout>
+        android:padding="10dp">
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center">
-
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textWebEmailAddress"
-                android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
-                android:hint="Email"
+                android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+                android:hint="Mobile no or Email"
                 android:drawablePadding="8dp"
+                android:inputType="number"
                 android:layout_marginBottom="8dp"
                 />
         </android.support.design.widget.TextInputLayout>
+
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -107,47 +92,14 @@
                 />
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_iconfinder_icons_password"
-                android:hint="Confirm Password"
-                android:drawablePadding="8dp"
-                android:inputType="textWebPassword"
-                android:layout_marginBottom="8dp"
-                />
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:gravity="center">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_hand"
-                android:hint="Enter invite code"
-                android:drawablePadding="8dp"
-                android:inputType="textCapCharacters"
-                android:layout_marginBottom="8dp"
-                />
-        </android.support.design.widget.TextInputLayout>
-       <Button
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="REGISTER"
-           android:textColor="@color/white"
-           android:background="@color/blue"
-           android:layout_marginTop="10dp"
-           />
-
+            android:text="SIGN IN"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_marginTop="10dp"
+            />
     </LinearLayout>
-
 
 </android.support.constraint.ConstraintLayout>
