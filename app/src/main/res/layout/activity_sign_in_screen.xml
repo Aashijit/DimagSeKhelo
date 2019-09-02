@@ -104,7 +104,7 @@
             android:textColor="@color/lightblue"
             android:layout_gravity="right"
             android:gravity="right"
-            android:onClick="signInfotgotPassword"
+            android:onClick="signInForgotPassword"
             />
 
         <android.support.v7.widget.AppCompatButton
