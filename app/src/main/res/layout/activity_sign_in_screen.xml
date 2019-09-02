@@ -101,7 +101,7 @@
             android:textAllCaps="false"
             android:padding="0dp"
             android:paddingRight="10dp"
-            android:textColor="@color/lightBlue"
+            android:textColor="@color/lightblue"
             android:layout_gravity="right"
             android:gravity="right"
             android:onClick="signInfotgotPassword"
