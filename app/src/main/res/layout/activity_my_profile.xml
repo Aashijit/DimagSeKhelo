@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MyProfileActivity"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:weightSum="100"
+
+        >
+
+
+        <LinearLayout
+            android:id="@+id/linearLayoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary"
+            android:layout_weight="8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="top"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="100">
+            <android.support.v7.widget.AppCompatImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                />
+
+
+            <android.support.v7.widget.AppCompatImageButton
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40px"
+                android:layout_weight="20"
+                android:background="@drawable/ic_person_black_24dp"
+                android:src="@drawable/ic_mode_edit_white_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.144"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AASHIJ34PQ"
+                android:layout_marginTop="40px"
+                android:layout_weight="60"
+                android:paddingLeft="30px"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/white"
+                android:drawablePadding="20px"
+                android:drawableRight="@drawable/ic_mode_edit_white_24dp"
+                />
+
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:src="@drawable/ic_share_white_24dp"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                />
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:elevation="2dp">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+                android:textColor="@color/lightblue"
+                android:background="@drawable/rightborder"
+                android:text="15\nFollowers" />
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+                android:background="@drawable/rightborder"
+                android:textColor="@color/lightblue"
+                android:text="10\nFollowing" />
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+                android:textColor="@color/lightblue"
+                android:text="20\nPosts" />
+
+
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutCards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="92"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="top"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="10dp"
+                android:orientation="vertical"
+                android:weightSum="3"
+                >
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@drawable/bottomborder"
+                    android:text="Playing History" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:background="@drawable/bottomborder"
+                    android:weightSum="2">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/contest"
+                        android:text="15\nContests"
+                        android:drawablePadding="5dp"
+                        android:background="@drawable/rightborder"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:textColor="@color/lightblue"
+                        android:layout_weight="1"
+                        />
+
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/matches"
+                        android:text="10\nMatches"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:textColor="@color/lightblue"
+                        android:layout_weight="1"
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottomborder"
+                    android:orientation="horizontal"
+                    android:paddingBottom="20dp"
+                    android:paddingTop="20dp"
+                    android:weightSum="2">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rightborder"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/series"
+                        android:gravity="center"
+                        android:text="3\nSeries"
+                        android:textColor="@color/lightblue"
+                        android:textStyle="bold" />
+
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/win"
+                        android:gravity="center"
+                        android:text="0\nWins"
+                        android:textColor="@color/lightblue"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="10dp"
+                android:orientation="vertical"
+                android:weightSum="3"
+                >
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@drawable/bottomborder"
+                    android:text="Tournament Leaderboard" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:background="@drawable/bottomborder"
+                    android:weightSum="2">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="#12,83,826"
+                        android:drawablePadding="5dp"
+                        android:background="@drawable/rightborder"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        style="@style/TextAppearance.AppCompat.Display1"
+                        android:textColor="@color/lightgrey"
+                        android:layout_weight="1"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
