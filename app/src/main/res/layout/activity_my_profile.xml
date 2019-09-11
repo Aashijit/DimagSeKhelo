@@ -56,7 +56,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="40px"
                 android:layout_weight="20"
-                android:background="@drawable/ic_person_black_24dp"
+                android:background="@drawable/ic_person_black_70dp"
                 android:src="@drawable/ic_mode_edit_white_24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
