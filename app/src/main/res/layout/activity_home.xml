@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Activity.HomeActivity">
 
-    <android.support.v7.widget.Toolbar
-        style="@style/Widget.AppCompat.Toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,28 +55,6 @@
     </android.support.v7.widget.Toolbar>
 
 
-
-            <android.support.v7.widget.AppCompatImageButton
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/ic_person_white_24dp" />
-            <android.support.v7.widget.AppCompatTextView
-                style="@style/TextAppearance.AppCompat.Headline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="8"
-                android:text="Dimag Se Khelo"
-                android:textColor="@color/white" />
-            <android.support.v7.widget.AppCompatImageButton
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/ic_notifications_white_24dp" />
-        </LinearLayout>
-    </android.support.v7.widget.Toolbar>
 
 
         <LinearLayout
@@ -489,13 +460,11 @@
             </LinearLayout>
 
         </LinearLayout>
-
-
-
-
-
-
-
     </LinearLayout>
+
+
+
+
+
 
 </android.support.constraint.ConstraintLayout>

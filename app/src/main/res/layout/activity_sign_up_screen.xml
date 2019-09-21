@@ -42,34 +42,17 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@color/lightgrey"
         android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.0"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/lightgrey"
-        android:padding="10dp"
-        >
-
-        <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_stay_current_portrait_black_24dp"
-            android:hint="Mobile no"
-            android:drawablePadding="8dp"
-            android:inputType="number"
-            android:layout_marginBottom="8dp"
-            />
-
-    </android.support.design.widget.TextInputLayout>
+        tools:layout_editor_absoluteX="10dp">
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -77,49 +60,68 @@
             android:gravity="center">
 
             <EditText
+                android:id="@+id/signUpScreenMobileNo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textWebEmailAddress"
+                android:layout_marginBottom="8dp"
+                android:drawableLeft="@drawable/ic_stay_current_portrait_black_24dp"
+                android:drawablePadding="8dp"
+                android:hint="Mobile no"
+                android:inputType="number" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/signUpScreenEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
+                android:drawablePadding="8dp"
                 android:hint="Email"
-                android:drawablePadding="8dp"
-                android:layout_marginBottom="8dp"
-                />
+                android:inputType="textWebEmailAddress" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
             android:drawableRight="@drawable/ic_visibility_off_black_24dp"
+            android:gravity="center"
             app:passwordToggleDrawable="@drawable/icon_selector"
-            android:gravity="center">
+            app:passwordToggleEnabled="true">
 
             <EditText
+                android:id="@+id/signUpScreenPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:layout_marginBottom="8dp"
+                android:drawableLeft="@drawable/ic_iconfinder_icons_password"
+                android:drawablePadding="8dp"
                 android:drawableStart="@drawable/ic_iconfinder_icons_password"
-                android:drawableLeft="@drawable/ic_iconfinder_icons_password"
-                android:drawablePadding="8dp"
-                android:inputType="textWebPassword"
-                android:layout_marginBottom="8dp"
-                />
+                android:hint="Password"
+                android:inputType="textWebPassword" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center">
+
             <EditText
+                android:id="@+id/signUpScreenConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:drawableLeft="@drawable/ic_iconfinder_icons_password"
+                android:drawablePadding="8dp"
                 android:hint="Confirm Password"
-                android:drawablePadding="8dp"
-                android:inputType="textWebPassword"
-                android:layout_marginBottom="8dp"
-                />
+                android:inputType="textWebPassword" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -129,25 +131,40 @@
             android:gravity="center">
 
             <EditText
+                android:id="@+id/signUpScreenInviteCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_hand"
-                android:hint="Enter invite code"
-                android:drawablePadding="8dp"
-                android:inputType="textCapCharacters"
                 android:layout_marginBottom="8dp"
-                />
+                android:drawableLeft="@drawable/ic_hand"
+                android:drawablePadding="8dp"
+                android:hint="Enter invite code (Optional)"
+                android:inputType="textCapCharacters" />
         </android.support.design.widget.TextInputLayout>
-       <Button
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="REGISTER"
-           android:textColor="@color/white"
-           android:background="@color/blue"
-           android:layout_marginTop="10dp"
-           />
+
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/blue"
+            android:text="REGISTER"
+            android:textColor="@color/white"
+            android:onClick="registerUser"/>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/signUpScreenProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 
 </android.support.constraint.ConstraintLayout>

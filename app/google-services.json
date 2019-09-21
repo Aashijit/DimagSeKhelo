@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "313762468633",
+    "firebase_url": "https://dimagsekhelo-df5c0.firebaseio.com",
+    "project_id": "dimagsekhelo-df5c0",
+    "storage_bucket": "dimagsekhelo-df5c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313762468633:android:7896b8105a67834e3e6b88",
+        "android_client_info": {
+          "package_name": "team.exp.dimagsekhelo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313762468633-bf7kncld5nsjaekm8nshkp6mkjrj4tpe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "team.exp.dimagsekhelo",
+            "certificate_hash": "6a253f3444b8f703e0af624c030cb40bd470fdf9"
+          }
+        },
+        {
+          "client_id": "313762468633-nhug466s2h09ebnco7p6si6nv1eaf37q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsZLKGGZps9Aw6sm5X4BtZVRyUhtD3G4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313762468633-nhug466s2h09ebnco7p6si6nv1eaf37q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
