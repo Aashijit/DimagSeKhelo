@@ -8,6 +8,7 @@
     <color name="lightgrey">#EBEBEB</color>
     <color name="blue">#23bf1b</color>
     <color name="lightblue">#666bed</color>
+    <color name="red">#FF0000</color>
 
 
 </resources>
