@@ -20,7 +20,7 @@ public class SignInScreen extends AppCompatActivity {
 
 
     public void signInForgotPassword(View view) {
-        Intent intent=new Intent(SignInScreen.this, ForgotPassword.class);
+        Intent intent=new Intent(SignInScreen.this, ForgotPasswordScreen.class);
         startActivity(intent);
     }
 }

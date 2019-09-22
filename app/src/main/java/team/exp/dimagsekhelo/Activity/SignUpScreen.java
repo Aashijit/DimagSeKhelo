@@ -1,22 +1,32 @@
 package team.exp.dimagsekhelo.Activity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.FirebaseTooManyRequestsException;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
+import team.exp.dimagsekhelo.DataObject.User;
+import team.exp.dimagsekhelo.Database.BusinessLogic.RegistrationService;
 import team.exp.dimagsekhelo.R;
 import team.exp.dimagsekhelo.Utils.Codes;
 import team.exp.dimagsekhelo.Utils.DataValidation;
@@ -25,10 +35,13 @@ import team.exp.dimagsekhelo.Utils.DataValidation;
 public class SignUpScreen extends AppCompatActivity implements Codes {
 
     //Member variables
-    private EditText editTextMobileNo,editTextEmail,editTextPassword, editTextConfirmPassword, editTextInviteCode;
+    private EditText editTextMobileNo,editTextEmail,editTextPassword, editTextConfirmPassword, editTextInviteCode,editTextOtp;
     private ProgressBar progressBar;
+    private Button buttonVerifyOtp;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     private FirebaseAuth firebaseAuth;
+
+    private RegistrationService registrationService;
 
     private static final int TIMEOUT_RECEIVE_OTP = 60;
     //Member variables
@@ -44,11 +57,27 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
         editTextPassword = (EditText) findViewById(R.id.signUpScreenPassword);
         editTextConfirmPassword = (EditText) findViewById(R.id.signUpScreenConfirmPassword);
         editTextInviteCode = (EditText) findViewById(R.id.signUpScreenInviteCode);
+        editTextOtp = (EditText)findViewById(R.id.signUpScreenOtp);
+        buttonVerifyOtp = (Button) findViewById(R.id.signUpScreenVerifyOtp);
         progressBar = (ProgressBar)findViewById(R.id.signUpScreenProgressBar);
         //Wire up all fields
 
+        //Initialize all the objects
+        firebaseAuth = FirebaseAuth.getInstance();
+        registrationService = new RegistrationService();
+        //Initialize all the objects
+
+
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+
+        if(currentUser == null){
+            Log.d(this.getClass().getName(),"No Current User");
+            return;
+        }
 
     }
+
 
     public void signUpBackButton(View view) {
         this.finish();
@@ -85,10 +114,7 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
         }
 
 
-
         //Step 2 : Verify the mobile number using the Mobile Otp Verification in Firebase
-
-
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
             @Override
@@ -100,10 +126,43 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
                 //     detect the incoming verification SMS and perform verification without
                 //     user action.
 
+                //Set the sms code
+                editTextOtp.setText(credential.getSmsCode());
 
-                Toast.makeText(getApplicationContext(),credential.getProvider(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Verification done",Toast.LENGTH_LONG).show();
                 progressBar.setVisibility(View.INVISIBLE);
-                //Store the user Id, password, email id
+
+                //Login with the credential
+                firebaseAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if(task.isSuccessful()){
+                            //Successful login done
+                            //Store the user id, hashed password, email id in the realtime database
+                            User user = new User();
+                            user.populateDataObject(editTextEmail.getText().toString(),editTextPassword.getText().toString(),editTextMobileNo.getText().toString());
+
+                            //Store the information
+                            String userId = registrationService.saveUserProfileInformation(user);
+
+                            //Save the user id in the shared preferences
+                            SharedPreferences pref = getApplicationContext().getSharedPreferences(USER_INFORMATION_PREFERENCE, 0); // 0 - for private mode
+                            pref.edit().putString(USER_ID,userId).apply();
+
+                            //Go to the Home Page
+                            Log.d(this.getClass().getName(),"Redirecting to HomeScreen");
+                            Intent intent = new Intent(SignUpScreen.this, HomeScreen.class);
+                            finish();
+                            startActivity(intent);
+                        }
+                        else
+                        {
+                            //Login not successful
+                            Toast.makeText(getApplicationContext(),"Login unsuccessful !!!",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
 
             }
 
@@ -131,12 +190,62 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
             }
 
             @Override
-            public void onCodeSent(@NonNull String verificationId,
+            public void onCodeSent(@NonNull final String verificationId,
                                    @NonNull PhoneAuthProvider.ForceResendingToken token) {
-
                 // The SMS verification code has been sent to the provided phone number, we
                 // now need to ask the user to enter the code and then construct a credential
                 // by combining the code with a verification ID.
+                editTextOtp.setVisibility(View.VISIBLE);
+                buttonVerifyOtp.setVisibility(View.VISIBLE);
+
+
+                buttonVerifyOtp.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        //Validate the otp
+                        if(!DataValidation.isValidOtp(editTextOtp.getText().toString()))
+                        {
+                            Toast.makeText(getApplicationContext(),"Please enter a valid OTP",Toast.LENGTH_LONG).show();
+                            return;
+                        }
+
+                        //Get the authenticating credential
+                        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, editTextOtp.getText().toString());
+
+                        //Login with the credential
+                        firebaseAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                if(task.isSuccessful()){
+                                    //Successful login done
+                                    //Store the user id, hashed password, email id in the realtime database
+                                    User user = new User();
+                                    user.populateDataObject(editTextEmail.getText().toString(),editTextPassword.getText().toString(),editTextMobileNo.getText().toString());
+
+                                    //Store the information
+                                    String userId = registrationService.saveUserProfileInformation(user);
+
+                                    //Save the user id in the shared preferences
+                                    SharedPreferences pref = getApplicationContext().getSharedPreferences(USER_INFORMATION_PREFERENCE, 0); // 0 - for private mode
+                                    pref.edit().putString(USER_ID,userId).apply();
+
+                                    //Go to the Home Page
+                                    Log.d(this.getClass().getName(),"Redirecting to HomeScreen");
+                                    Intent intent = new Intent(SignUpScreen.this, HomeScreen.class);
+                                    finish();
+                                    startActivity(intent);
+                                }
+                                else
+                                {
+                                    //Login not successful
+                                    Toast.makeText(getApplicationContext(),"Login unsuccessful !!!",Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+                    }
+                });
             }
         };
 

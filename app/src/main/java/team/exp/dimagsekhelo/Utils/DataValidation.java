@@ -14,4 +14,10 @@ public class DataValidation {
     public static boolean isValidEmailId(String emailId){
         return emailId != null && emailId.matches("[a-zA-Z0-9]{1,}@[a-zA-Z]{1,}\\.[a-zA-Z]{1,}");
     }
+
+
+    public static boolean isValidOtp(String otp){
+        return otp != null && otp.matches("[0-9]{1,}");
+    }
+
 }

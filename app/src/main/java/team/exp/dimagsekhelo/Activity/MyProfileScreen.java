@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import team.exp.dimagsekhelo.R;
 
-public class MyProfileActivity extends AppCompatActivity {
+public class MyProfileScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

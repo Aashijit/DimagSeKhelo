@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundimage"
     tools:context=".Activity.SignUpScreen">
 
     <android.support.v7.widget.Toolbar
@@ -45,10 +46,10 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@color/lightgrey"
+        android:background="@drawable/allborder"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:padding="20dp"
+        android:alpha="0.95"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.0"
@@ -71,6 +72,8 @@
 
 
         </android.support.design.widget.TextInputLayout>
+
+
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -142,14 +145,51 @@
         </android.support.design.widget.TextInputLayout>
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="100"
+            android:gravity="center_vertical">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="98">
+
+            <EditText
+                android:id="@+id/signUpScreenOtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                android:drawableLeft="@drawable/ic_phone_locked_black_24dp"
+                android:drawablePadding="8dp"
+                android:hint="Verification code"
+                android:inputType="number" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/signUpScreenVerifyOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Verify"
+                android:visibility="gone"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                />
+
+        </LinearLayout>
+
+
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@color/blue"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:text="REGISTER"
-            android:textColor="@color/white"
             android:onClick="registerUser"/>
 
     </LinearLayout>

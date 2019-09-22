@@ -6,7 +6,7 @@ import android.view.View;
 
 import team.exp.dimagsekhelo.R;
 
-public class ForgotPassword extends AppCompatActivity {
+public class ForgotPasswordScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password_activity);
