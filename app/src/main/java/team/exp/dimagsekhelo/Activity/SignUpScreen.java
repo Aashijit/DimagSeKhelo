@@ -254,13 +254,16 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
 
         @Override
         protected SaveProfileInformationResponse doInBackground(User... params) {
-
-            SaveProfileInformationResponse response = registrationService.saveUserProfileInformation(params[0]);
-            return response;
+            return registrationService.saveUserProfileInformation(params[0]);
         }
 
         @Override
         protected void onPostExecute(SaveProfileInformationResponse response) {
+
+            progressBar.setVisibility(View.INVISIBLE);
+
+            buttonVerifyOtp.setVisibility(View.GONE);
+            editTextOtp.setVisibility(View.GONE);
 
             if(!response.getReturnCode().equalsIgnoreCase(RC_SUCCESS)){
                 Toast.makeText(getApplicationContext(),response.getReturnMessage(),Toast.LENGTH_LONG).show();

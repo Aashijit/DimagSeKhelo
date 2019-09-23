@@ -58,6 +58,7 @@ public class RegistrationService implements Codes {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
+
                     boolean isPresent = false;
 
 
@@ -125,6 +126,8 @@ public class RegistrationService implements Codes {
         });
 
 
+
+        while (saveProfileInformationResponse == null);
 
         return saveProfileInformationResponse;
     }
