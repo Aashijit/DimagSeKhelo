@@ -29,6 +29,7 @@ import java.util.concurrent.TimeUnit;
 import team.exp.dimagsekhelo.DataObject.SaveProfileInformationResponse;
 import team.exp.dimagsekhelo.DataObject.User;
 import team.exp.dimagsekhelo.Database.BusinessLogic.RegistrationService;
+import team.exp.dimagsekhelo.Database.DataLogic.LocalStorage;
 import team.exp.dimagsekhelo.R;
 import team.exp.dimagsekhelo.Utils.Codes;
 import team.exp.dimagsekhelo.Utils.DataValidation;
@@ -42,6 +43,8 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
     private Button buttonVerifyOtp;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     private FirebaseAuth firebaseAuth;
+
+    private LocalStorage localStorage;
 
     private RegistrationService registrationService;
 
@@ -67,6 +70,7 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
         //Initialize all the objects
         firebaseAuth = FirebaseAuth.getInstance();
         registrationService = new RegistrationService();
+        localStorage = new LocalStorage(SignUpScreen.this);
         //Initialize all the objects
 
 
@@ -114,6 +118,10 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
             view.setEnabled(Boolean.TRUE);
             return;
         }
+
+
+        //Store the mobile number here
+        localStorage.storeUserInformation(MOBILE_NUMBER,editTextMobileNo.getText().toString());
 
 
         //Step 2 : Verify the mobile number using the Mobile Otp Verification in Firebase
@@ -254,6 +262,7 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
 
         @Override
         protected SaveProfileInformationResponse doInBackground(User... params) {
+
             return registrationService.saveUserProfileInformation(params[0]);
         }
 
@@ -262,17 +271,22 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
 
             progressBar.setVisibility(View.INVISIBLE);
 
-            buttonVerifyOtp.setVisibility(View.GONE);
-            editTextOtp.setVisibility(View.GONE);
+            buttonVerifyOtp.setVisibility(View.INVISIBLE);
+            editTextOtp.setVisibility(View.INVISIBLE);
 
             if(!response.getReturnCode().equalsIgnoreCase(RC_SUCCESS)){
                 Toast.makeText(getApplicationContext(),response.getReturnMessage(),Toast.LENGTH_LONG).show();
+
+                //Take the user out of the activity
+                finish();
+
                 return;
             }
 
+
+
             //Save the user id in the shared preferences
-            SharedPreferences pref = getApplicationContext().getSharedPreferences(USER_INFORMATION_PREFERENCE, 0); // 0 - for private mode
-            pref.edit().putString(USER_ID,response.getUserId()).apply();
+            localStorage.storeUserInformation(Codes.USER_ID,response.getUserId());
 
             //Go to the Home Page
             Log.d(this.getClass().getName(),"Redirecting to HomeScreen");

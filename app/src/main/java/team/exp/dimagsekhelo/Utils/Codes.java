@@ -7,6 +7,8 @@ public interface Codes {
     //Keys for shared preferences
     public static String USER_INFORMATION_PREFERENCE="UserAccountInfo";
     public static String USER_ID = "UserId";
+    public static String EMAIL_ID = "EmailId";
+    public static String MOBILE_NUMBER = "MobileNumber";
 
 
     //Error Codes
