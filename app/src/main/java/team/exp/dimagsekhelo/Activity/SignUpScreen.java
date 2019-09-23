@@ -2,6 +2,7 @@ package team.exp.dimagsekhelo.Activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
+import team.exp.dimagsekhelo.DataObject.SaveProfileInformationResponse;
 import team.exp.dimagsekhelo.DataObject.User;
 import team.exp.dimagsekhelo.Database.BusinessLogic.RegistrationService;
 import team.exp.dimagsekhelo.R;
@@ -143,18 +145,8 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
                             User user = new User();
                             user.populateDataObject(editTextEmail.getText().toString(),editTextPassword.getText().toString(),editTextMobileNo.getText().toString());
 
-                            //Store the information
-                            String userId = registrationService.saveUserProfileInformation(user);
-
-                            //Save the user id in the shared preferences
-                            SharedPreferences pref = getApplicationContext().getSharedPreferences(USER_INFORMATION_PREFERENCE, 0); // 0 - for private mode
-                            pref.edit().putString(USER_ID,userId).apply();
-
-                            //Go to the Home Page
-                            Log.d(this.getClass().getName(),"Redirecting to HomeScreen");
-                            Intent intent = new Intent(SignUpScreen.this, HomeScreen.class);
-                            finish();
-                            startActivity(intent);
+                           //Store the information
+                           new SaveUserProfile().execute(user);
                         }
                         else
                         {
@@ -225,17 +217,8 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
                                     user.populateDataObject(editTextEmail.getText().toString(),editTextPassword.getText().toString(),editTextMobileNo.getText().toString());
 
                                     //Store the information
-                                    String userId = registrationService.saveUserProfileInformation(user);
-
-                                    //Save the user id in the shared preferences
-                                    SharedPreferences pref = getApplicationContext().getSharedPreferences(USER_INFORMATION_PREFERENCE, 0); // 0 - for private mode
-                                    pref.edit().putString(USER_ID,userId).apply();
-
-                                    //Go to the Home Page
-                                    Log.d(this.getClass().getName(),"Redirecting to HomeScreen");
-                                    Intent intent = new Intent(SignUpScreen.this, HomeScreen.class);
-                                    finish();
-                                    startActivity(intent);
+                                    //Create an Async call to get the response
+                                    new SaveUserProfile().execute(user);
                                 }
                                 else
                                 {
@@ -260,5 +243,50 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
 
         //Re-enable the button
         view.setEnabled(Boolean.TRUE);
+    }
+
+
+
+
+
+
+    private class SaveUserProfile extends AsyncTask<User, Void, SaveProfileInformationResponse> {
+
+        @Override
+        protected SaveProfileInformationResponse doInBackground(User... params) {
+
+            SaveProfileInformationResponse response = registrationService.saveUserProfileInformation(params[0]);
+            return response;
+        }
+
+        @Override
+        protected void onPostExecute(SaveProfileInformationResponse response) {
+
+            if(!response.getReturnCode().equalsIgnoreCase(RC_SUCCESS)){
+                Toast.makeText(getApplicationContext(),response.getReturnMessage(),Toast.LENGTH_LONG).show();
+                return;
+            }
+
+            //Save the user id in the shared preferences
+            SharedPreferences pref = getApplicationContext().getSharedPreferences(USER_INFORMATION_PREFERENCE, 0); // 0 - for private mode
+            pref.edit().putString(USER_ID,response.getUserId()).apply();
+
+            //Go to the Home Page
+            Log.d(this.getClass().getName(),"Redirecting to HomeScreen");
+            Intent intent = new Intent(SignUpScreen.this, HomeScreen.class);
+            finish();
+            startActivity(intent);
+
+        }
+
+        @Override
+        protected void onPreExecute() {
+
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+
+        }
     }
 }

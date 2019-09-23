@@ -4,6 +4,17 @@ import team.exp.dimagsekhelo.DataObject.User;
 
 public class UserAccountInfo {
 
+
+    public UserAccountInfo(){
+
+    }
+    public UserAccountInfo(String _MobileNumber, String _HashedPassword, String _Salt, String _EmailId) {
+        this._MobileNumber = _MobileNumber;
+        this._HashedPassword = _HashedPassword;
+        this._Salt = _Salt;
+        this._EmailId = _EmailId;
+    }
+
     private String _MobileNumber;
     private String _HashedPassword;
     private String _Salt;
