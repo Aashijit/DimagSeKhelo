@@ -33,7 +33,7 @@ public class SignInScreen extends AppCompatActivity implements  Codes {
 
     //Member Variables
     private EditText editTextMobileNo,editTextPassword,editTextVerifyOtp;
-    private Button buttonVerifyOtp;
+    private Button buttonVerifyOtp, loginButton;
     private ProgressBar progressBar;
 
 
@@ -58,6 +58,7 @@ public class SignInScreen extends AppCompatActivity implements  Codes {
          editTextVerifyOtp = (EditText)findViewById(R.id.signInScreenOtp);
          buttonVerifyOtp = (Button)findViewById(R.id.signInScreenVerifyOtp);
          progressBar = (ProgressBar)findViewById(R.id.signInScreenProgressBar);
+         loginButton = (Button) findViewById(R.id.signInScreenLoginButton);
         //Wire up
 
         //Initialize member variables

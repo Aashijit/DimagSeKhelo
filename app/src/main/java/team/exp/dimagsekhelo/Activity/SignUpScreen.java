@@ -40,7 +40,7 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
     //Member variables
     private EditText editTextMobileNo,editTextEmail,editTextPassword, editTextConfirmPassword, editTextInviteCode,editTextOtp;
     private ProgressBar progressBar;
-    private Button buttonVerifyOtp;
+    private Button buttonVerifyOtp, registerButton;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     private FirebaseAuth firebaseAuth;
 
@@ -65,6 +65,7 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
         editTextOtp = (EditText)findViewById(R.id.signUpScreenOtp);
         buttonVerifyOtp = (Button) findViewById(R.id.signUpScreenVerifyOtp);
         progressBar = (ProgressBar)findViewById(R.id.signUpScreenProgressBar);
+        registerButton = (Button) findViewById(R.id.signUpScreenRegisterButton);
         //Wire up all fields
 
         //Initialize all the objects
@@ -197,6 +198,8 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
                 // by combining the code with a verification ID.
                 editTextOtp.setVisibility(View.VISIBLE);
                 buttonVerifyOtp.setVisibility(View.VISIBLE);
+                registerButton.setVisibility(View.INVISIBLE);
+
 
 
                 buttonVerifyOtp.setOnClickListener(new View.OnClickListener() {
