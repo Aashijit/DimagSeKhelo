@@ -142,6 +142,8 @@ public class SignUpScreen extends AppCompatActivity implements Codes {
 
                 Toast.makeText(getApplicationContext(),"Verification done",Toast.LENGTH_LONG).show();
                 progressBar.setVisibility(View.INVISIBLE);
+                registerButton.setVisibility(View.INVISIBLE);
+
 
                 //Login with the credential
                 firebaseAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

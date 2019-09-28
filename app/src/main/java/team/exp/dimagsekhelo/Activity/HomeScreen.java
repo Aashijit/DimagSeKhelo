@@ -1,11 +1,10 @@
 package team.exp.dimagsekhelo.Activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -27,6 +26,7 @@ import team.exp.dimagsekhelo.WebServiceResponseObjects.UpcomingMatchesResponse;
 
 public class HomeScreen extends AppCompatActivity {
 
+
     //Member Variables
     private ListView listView;
     private ProgressBar progressBar;
@@ -39,76 +39,64 @@ public class HomeScreen extends AppCompatActivity {
     private UpcomingMatchesListAdapter upcomingMatchesListAdapter;
 
 
-    //Member Variables
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
         listView =  (ListView) findViewById(R.id.listViewUpcomingMatches);
-        progressBar = (ProgressBar) findViewById(R.id.upcomingMatchesProgressBar);
-        setSupportActionBar(toolbar);
+        progressBar = (ProgressBar) findViewById(R.id.progressBarUpcomingMatches);
+
+
+
 
         //Initialize the variables
         firebaseAuth = FirebaseAuth.getInstance();
-
         //Initialize the variables
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeScreen.this, MyProfileScreen.class);
-                startActivity(intent);
-            }
-        });
 
         //Fetch the upcoming matches here
         progressBar.setVisibility(View.VISIBLE);
+        Log.d(this.getClass().getName(),"Progress Bar : "+progressBar.getProgress());
         fetchUpcomingMatches();
+    }
 
-
+    public void goToProfilePage(View view) {
+        Intent intent = new Intent(HomeScreen.this, MyProfileScreen.class);
+        startActivity(intent);
     }
 
 
-
-
     private void fetchUpcomingMatches(){
-
         //Step 1 : Fetch the matches from the DB in a list
+        Log.d(this.getClass().getName(),"Entered Here ");
         final List<UpcomingMatchesResponse> upcomingMatchesResponseList = new ArrayList<>();
         databaseReferenceUpcomingMatches.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 for(DataSnapshot dsp : dataSnapshot.getChildren()){
+
                     UpcomingMatchesResponse upcomingMatchesResponse = dsp.getValue(UpcomingMatchesResponse.class);
+                    Log.d(this.getClass().getName(),"Entered Here : "+upcomingMatchesResponse);
                     upcomingMatchesResponseList.add(upcomingMatchesResponse);
                 }
+                //Step 2 : Update the List View
+                upcomingMatchesListAdapter = new UpcomingMatchesListAdapter(HomeScreen.this,upcomingMatchesResponseList);
+                listView.setAdapter(upcomingMatchesListAdapter);
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(),"Could not fetch the upcoming matches !!! ",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Could not fetch the upcoming matches !!! ", Toast.LENGTH_LONG).show();
             }
         });
 
 
-        //Step 2 : Update the List View
-        upcomingMatchesListAdapter = new UpcomingMatchesListAdapter(this,upcomingMatchesResponseList);
-        listView.setAdapter(upcomingMatchesListAdapter);
-        progressBar.setVisibility(View.INVISIBLE);
+
     }
 
-
-
-    public void logOut(View view) {
-        firebaseAuth.signOut();
-        Intent intent = new Intent(HomeScreen.this, SplashScreen.class);
-        finish();
-        startActivity(intent);
-    }
 }
