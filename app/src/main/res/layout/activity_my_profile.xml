@@ -40,24 +40,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="100">
+                android:weightSum="100"
+                android:gravity="center_vertical"
+                >
             <android.support.v7.widget.AppCompatImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
-                android:src="@drawable/ic_arrow_back_black_24dp"
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:onClick="goBack"
                 />
 
 
             <android.support.v7.widget.AppCompatImageButton
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="40px"
-                android:layout_weight="20"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_weight="10"
                 android:background="@drawable/ic_person_black_70dp"
-                android:src="@drawable/ic_mode_edit_white_24dp"
+                app:srcCompat="@drawable/ic_mode_edit_white_24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.144"
@@ -71,10 +73,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="AASHIJ34PQ"
-                android:layout_marginTop="40px"
                 android:layout_weight="60"
                 android:paddingLeft="30px"
                 style="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="18dp"
                 android:textColor="@color/white"
                 android:drawablePadding="20px"
                 android:drawableRight="@drawable/ic_mode_edit_white_24dp"
@@ -85,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
-                android:src="@drawable/ic_share_white_24dp"
+                app:srcCompat="@drawable/ic_share_white_24dp"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 />
             </LinearLayout>
@@ -291,7 +293,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:background="@drawable/bottomborder"
-                    android:text="Tournament Leaderboard" />
+                    android:text="Point Balance" />
 
 
                 <LinearLayout
@@ -299,36 +301,35 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
+                    android:gravity="center_vertical"
                     android:background="@drawable/bottomborder"
-                    android:weightSum="2">
+                    android:weightSum="10">
 
                     <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="0dp"
+                        android:layout_width="0dip"
                         android:layout_height="wrap_content"
-                        android:text="#12,83,826"
-                        android:drawablePadding="5dp"
-                        android:background="@drawable/rightborder"
+                        android:text="134.46 ~ Rs 123.45"
                         android:gravity="center"
-                        android:textStyle="bold"
                         style="@style/TextAppearance.AppCompat.Display1"
                         android:textColor="@color/lightgrey"
-                        android:layout_weight="1"
+                        android:layout_weight="8"
                         />
 
 
+                    <android.support.v7.widget.AppCompatButton
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="Add"
+                        android:drawableRight="@drawable/ic_add_box_orange_24dp"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_weight="2"
+                        />
+
                 </LinearLayout>
-
-
-
-
             </LinearLayout>
-
-
-
-
-
         </LinearLayout>
-
     </LinearLayout>
-
 </android.support.constraint.ConstraintLayout>

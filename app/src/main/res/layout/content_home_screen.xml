@@ -22,8 +22,6 @@
         android:weightSum="100">
 
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,409 +37,45 @@
                 android:layout_height="wrap_content"
                 style="@style/TextAppearance.AppCompat.Headline"
                 android:textStyle="bold"
-                android:textSize="20dp"
+                android:textColor="@color/lightgrey"
+                android:textSize="18dp"
                 android:padding="10dp"
                 android:text="Upcoming matches"
-                />
+            />
 
-
-            <LinearLayout
+            <ListView
+                android:id="@+id/listViewUpcomingMatches"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bottomborder"
-                android:elevation="10dp"
-                android:padding="10dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                >
+                android:layout_height="600dp"
+            />
 
-                <android.support.v7.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="WI-W vs AU-W ODI-3rd ODI"
-                    />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="10"
-                    android:gravity="center_vertical"
-                    >
-                    <android.support.v7.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/india"
-                        android:layout_weight="2"
-                        android:padding="10dp"
-                        />
 
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="WI-W"
-                        android:layout_weight="1"
-                        style="@style/TextAppearance.AppCompat.Button"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2h 04m left"
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/red"
-                        android:layout_weight="4"
-                        android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="AU-W"
-                        android:layout_weight="1"
-                        style="@style/TextAppearance.AppCompat.Button"
-                        />
-
-                    <android.support.v7.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/australia"
-                        android:layout_weight="2"
-                        android:padding="10dp"
-                        />
-
-
-                </LinearLayout>
-
-
-
-
-
-            </LinearLayout>
-
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bottomborder"
-                android:elevation="10dp"
-                android:padding="10dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                >
-
-                <android.support.v7.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="WI-W vs AU-W ODI-3rd ODI"
-                    />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="10"
-                    android:gravity="center_vertical"
-                    >
-                    <android.support.v7.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/bangladesh"
-                        android:layout_weight="2"
-                        android:padding="10dp"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="WI-W"
-                        android:layout_weight="1"
-                        style="@style/TextAppearance.AppCompat.Button"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2h 04m left"
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/red"
-                        android:layout_weight="4"
-                        android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="IN-W"
-                        android:layout_weight="1"
-                        style="@style/TextAppearance.AppCompat.Button"
-                        />
-
-                    <android.support.v7.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/india"
-                        android:layout_weight="2"
-                        android:padding="10dp"
-                        />
-
-
-                </LinearLayout>
-
-
-
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bottomborder"
-                android:elevation="10dp"
-                android:padding="10dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                >
-
-                <android.support.v7.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="WI-W vs AU-W ODI-3rd ODI"
-                    />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="10"
-                    android:gravity="center_vertical"
-                    >
-                    <android.support.v7.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/pakistan"
-                        android:layout_weight="2"
-                        android:padding="10dp"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="WI-W"
-                        android:layout_weight="1"
-                        style="@style/TextAppearance.AppCompat.Button"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2h 04m left"
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/red"
-                        android:layout_weight="4"
-                        android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="IR-W"
-                        android:layout_weight="1"
-                        style="@style/TextAppearance.AppCompat.Button"
-                        />
-
-                    <android.support.v7.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ireland"
-                        android:layout_weight="2"
-                        android:padding="10dp"
-                        />
-
-
-                </LinearLayout>
-
-
-
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bottomborder"
-                android:elevation="10dp"
-                android:padding="10dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                >
-
-                <android.support.v7.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="WI-W vs AU-W ODI-3rd ODI"
-                    />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="10"
-                    android:gravity="center_vertical"
-                    >
-                    <android.support.v7.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/zimbabwe"
-                        android:layout_weight="2"
-                        android:padding="10dp"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="WI-W"
-                        android:layout_weight="1"
-                        style="@style/TextAppearance.AppCompat.Button"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2h 04m left"
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/red"
-                        android:layout_weight="4"
-                        android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="AU-W"
-                        android:layout_weight="1"
-                        style="@style/TextAppearance.AppCompat.Button"
-                        />
-
-                    <android.support.v7.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/australia"
-                        android:layout_weight="2"
-                        android:padding="10dp"
-                        />
-
-
-                </LinearLayout>
-
-
-
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bottomborder"
-                android:elevation="10dp"
-                android:padding="10dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                >
-
-                <android.support.v7.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="WI-W vs AU-W ODI-3rd ODI"
-                    />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="10"
-                    android:gravity="center_vertical"
-                    >
-                    <android.support.v7.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/australia"
-                        android:layout_weight="2"
-                        android:padding="10dp"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="WI-W"
-                        android:layout_weight="1"
-                        style="@style/TextAppearance.AppCompat.Button"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2h 04m left"
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/red"
-                        android:layout_weight="4"
-                        android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="AU-W"
-                        android:layout_weight="1"
-                        style="@style/TextAppearance.AppCompat.Button"
-                        />
-
-                    <android.support.v7.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/bangladesh"
-                        android:layout_weight="2"
-                        android:padding="10dp"
-                        />
-
-
-                </LinearLayout>
-
-
-
-
-
-            </LinearLayout>
 
         </LinearLayout>
+
+
+
+        <ProgressBar
+            android:id="@+id/upcomingMatchesProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            />
+
 
         <android.support.v7.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="left"
+            android:gravity="center_vertical"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:drawableRight="@drawable/exit"
             android:onClick="logOut"
+            android:background="@drawable/allsideborder"
             android:text="Log Out"
             />
 
     </LinearLayout>
-
-
-
 </android.support.v4.widget.NestedScrollView>
