@@ -6,7 +6,8 @@
 
     <color name="white">#ffffff</color>
     <color name="lightgrey">#9C9C9C</color>
-    <color name="blue">#23bf1b</color>
+    <color name="vlightgrey">#E7E7E7</color>
+    <color name="blue">#1B65BF</color>
     <color name="lightblue">#666bed</color>
     <color name="red">#FF0000</color>
 

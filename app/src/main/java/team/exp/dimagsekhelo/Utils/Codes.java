@@ -11,6 +11,10 @@ public interface Codes {
     public static String MOBILE_NUMBER = "MobileNumber";
 
 
+    public static String MATCH_ID="MatchId";
+    public static String MATCH_NAME="MatchName";
+
+
     //Error Codes
     public static String RC_SUCCESS="0";
     public static String RC_USER_PRESENT="1";

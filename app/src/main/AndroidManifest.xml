@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.HomeScreen"></activity>
+        <activity android:name=".Activity.ContestSelectionScreen"></activity>
+        <activity android:name=".Activity.HomeScreen" />
         <activity android:name=".Activity.MyProfileScreen" />
         <activity android:name=".Activity.SignUpScreen" />
         <activity android:name=".Activity.SignInScreen" />
