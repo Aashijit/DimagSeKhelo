@@ -1,12 +1,15 @@
 package team.exp.dimagsekhelo.Activity;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -24,6 +27,8 @@ import java.util.List;
 import team.exp.dimagsekhelo.CustomUIElements.UpcomingMatchesListAdapter;
 import team.exp.dimagsekhelo.R;
 import team.exp.dimagsekhelo.Utils.Codes;
+import team.exp.dimagsekhelo.WebServiceRequestObjects.ContestUserRequest;
+import team.exp.dimagsekhelo.WebServiceRequestObjects.TeamContestRequest;
 import team.exp.dimagsekhelo.WebServiceResponseObjects.UpcomingMatchesResponse;
 
 public class HomeScreen extends AppCompatActivity implements Codes {
@@ -32,11 +37,20 @@ public class HomeScreen extends AppCompatActivity implements Codes {
     //Member Variables
     private ListView listView;
     private ProgressBar progressBar;
+    private String userPhoneNumber;
+
+    List<TeamContestRequest> teamContestRequests;
+    List<ContestUserRequest> contestUserRequests;
+
+    private Button viewContests, viewTeams;
 
     private FirebaseAuth firebaseAuth;
 
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReferenceUpcomingMatches = database.getReference("UpcomingMatches");
+    DatabaseReference databaseReferenceMyContests = database.getReference("ContestUser");
+    DatabaseReference databaseReferenceMyTeams = database.getReference("TeamContest");
+
 
     private UpcomingMatchesListAdapter upcomingMatchesListAdapter;
 
@@ -49,12 +63,19 @@ public class HomeScreen extends AppCompatActivity implements Codes {
 
         listView =  (ListView) findViewById(R.id.listViewUpcomingMatches);
         progressBar = (ProgressBar) findViewById(R.id.progressBarUpcomingMatches);
-
+        viewContests = (Button) findViewById(R.id.viewContestButton);
+        viewTeams = (Button) findViewById(R.id.viewTeamButton);
 
 
 
         //Initialize the variables
         firebaseAuth = FirebaseAuth.getInstance();
+        userPhoneNumber = firebaseAuth.getCurrentUser().getPhoneNumber();
+
+        if(userPhoneNumber == null){
+            Toast.makeText(getApplicationContext(),"Please re-login  !!!!",Toast.LENGTH_LONG).show();
+            return;
+        }
         //Initialize the variables
 
 
@@ -63,8 +84,66 @@ public class HomeScreen extends AppCompatActivity implements Codes {
         progressBar.setVisibility(View.VISIBLE);
         Log.d(this.getClass().getName(),"Progress Bar : "+progressBar.getProgress());
         fetchUpcomingMatches();
+        fetchContests();
+        fetchTeams();
+    }
+
+    private void fetchContests(){
+        databaseReferenceMyContests.addListenerForSingleValueEvent(new ValueEventListener(){
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                contestUserRequests = new ArrayList<>();
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    ContestUserRequest contestUserRequest = snapshot.getValue(ContestUserRequest.class);
+
+                    if(contestUserRequest == null)
+                        continue;
+
+                    if(contestUserRequest.get_UserPhoneNumber().equalsIgnoreCase(userPhoneNumber))
+                        contestUserRequests.add(contestUserRequest);
+
+                }
+                viewContests.setEnabled(true);
+
+                    if(contestUserRequests.size() > 0) {
+                        makeToast(viewContests, "Joined " + contestUserRequests.size() + " Contests");
+                    }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.v(this.getClass().getName(),"Could not fetch contests !!!");
+                return;
+            }
+        });
+    }
 
 
+    private void fetchTeams(){
+        databaseReferenceMyTeams.addListenerForSingleValueEvent(new ValueEventListener(){
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                teamContestRequests = new ArrayList<>();
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    TeamContestRequest teamContestRequest = snapshot.getValue(TeamContestRequest.class);
+
+                    if(teamContestRequest == null)
+                        continue;
+
+                    if(teamContestRequest.get_UserPhoneNumber().equalsIgnoreCase(userPhoneNumber))
+                        teamContestRequests.add(teamContestRequest);
+
+                }
+                viewTeams.setEnabled(true);
+                if(teamContestRequests.size() > 0)
+                    makeToast(viewTeams,"Created "+teamContestRequests.size()+" Teams");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.v(this.getClass().getName(),"Could not fetch teams !!!");
+                return;
+            }
+        });
     }
 
     public void goToProfilePage(View view) {
@@ -92,10 +171,6 @@ public class HomeScreen extends AppCompatActivity implements Codes {
                 listView.setAdapter(upcomingMatchesListAdapter);
                 progressBar.setVisibility(View.GONE);
 
-
-
-
-
                 //Step 3 : Setup the list on click adapter
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
@@ -114,9 +189,25 @@ public class HomeScreen extends AppCompatActivity implements Codes {
                 Toast.makeText(getApplicationContext(),"Could not fetch the upcoming matches !!! ", Toast.LENGTH_LONG).show();
             }
         });
+    }
 
+    public void viewContest(View view) {
+        Intent intent = new Intent(HomeScreen.this, UserContestsScreen.class);
+        intent.putParcelableArrayListExtra(CONTESTS, (ArrayList<? extends Parcelable>) contestUserRequests);
+        startActivity(intent);
+    }
 
+    public void viewTeam(View view) {
 
     }
 
+
+    public void makeToast(View view, String text) {
+
+        int x = view.getLeft();
+        int y = view.getTop() + 2 * view.getHeight();
+        Toast toast = Toast.makeText(this, text, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP | Gravity.LEFT, x-3, y);
+        toast.show();
+    }
 }

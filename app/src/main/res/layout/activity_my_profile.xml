@@ -54,6 +54,8 @@
 
 
             <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/profilePic"
+                android:onClick="clickProfilePictureAndUpload"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
@@ -70,6 +72,7 @@
 
 
             <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/myProfileUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="AASHIJ34PQ"
@@ -93,63 +96,63 @@
             </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/white"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            android:elevation="2dp">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:weightSum="3"-->
+<!--            android:elevation="2dp">-->
 
-            <android.support.v7.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Caption"
-                android:padding="10dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_marginTop="10px"
-                android:layout_marginBottom="10px"
-                android:textColor="@color/lightblue"
-                android:background="@drawable/rightborder"
-                android:text="15\nFollowers" />
-
-
-            <android.support.v7.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Caption"
-                android:padding="10dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_marginTop="10px"
-                android:layout_marginBottom="10px"
-                android:background="@drawable/rightborder"
-                android:textColor="@color/lightblue"
-                android:text="10\nFollowing" />
+<!--            <android.support.v7.widget.AppCompatTextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/TextAppearance.AppCompat.Caption"-->
+<!--                android:padding="10dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginTop="10px"-->
+<!--                android:layout_marginBottom="10px"-->
+<!--                android:textColor="@color/lightblue"-->
+<!--                android:background="@drawable/rightborder"-->
+<!--                android:text="15\nFollowers" />-->
 
 
-            <android.support.v7.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Caption"
-                android:padding="10dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_marginTop="10px"
-                android:layout_marginBottom="10px"
-                android:textColor="@color/lightblue"
-                android:text="20\nPosts" />
+<!--            <android.support.v7.widget.AppCompatTextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/TextAppearance.AppCompat.Caption"-->
+<!--                android:padding="10dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginTop="10px"-->
+<!--                android:layout_marginBottom="10px"-->
+<!--                android:background="@drawable/rightborder"-->
+<!--                android:textColor="@color/lightblue"-->
+<!--                android:text="10\nFollowing" />-->
+
+
+<!--            <android.support.v7.widget.AppCompatTextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/TextAppearance.AppCompat.Caption"-->
+<!--                android:padding="10dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginTop="10px"-->
+<!--                android:layout_marginBottom="10px"-->
+<!--                android:textColor="@color/lightblue"-->
+<!--                android:text="20\nPosts" />-->
 
 
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
         </LinearLayout>
 
@@ -197,6 +200,7 @@
                     android:weightSum="2">
 
                     <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/myProfileContests"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:drawableTop="@drawable/contest"
@@ -212,6 +216,7 @@
 
 
                     <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/myProfileMatches"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:drawableTop="@drawable/matches"
@@ -224,48 +229,7 @@
                         android:layout_weight="1"
                         />
 
-
                 </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bottomborder"
-                    android:orientation="horizontal"
-                    android:paddingBottom="20dp"
-                    android:paddingTop="20dp"
-                    android:weightSum="2">
-
-                    <android.support.v7.widget.AppCompatTextView
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/rightborder"
-                        android:drawablePadding="5dp"
-                        android:drawableTop="@drawable/series"
-                        android:gravity="center"
-                        android:text="3\nSeries"
-                        android:textColor="@color/lightblue"
-                        android:textStyle="bold" />
-
-
-                    <android.support.v7.widget.AppCompatTextView
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawablePadding="5dp"
-                        android:drawableTop="@drawable/win"
-                        android:gravity="center"
-                        android:text="0\nWins"
-                        android:textColor="@color/lightblue"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
 
             </LinearLayout>
 
@@ -300,6 +264,7 @@
                     android:weightSum="10">
 
                     <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/myProfilePointBalance"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:text="134.46 ~ Rs 123.45"
@@ -311,6 +276,7 @@
 
 
                     <android.support.v7.widget.AppCompatButton
+                        android:onClick="addPointBalance"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:drawablePadding="5dp"
@@ -326,7 +292,9 @@
             </LinearLayout>
 
             <android.support.v7.widget.AppCompatButton
+                android:background="@drawable/allsideborder"
                 android:layout_width="match_parent"
+                android:paddingLeft="20dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:layout_marginTop="10dp"

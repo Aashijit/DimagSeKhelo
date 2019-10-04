@@ -1,6 +1,7 @@
 package team.exp.dimagsekhelo.CustomUIElements;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,15 +9,19 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.List;
 
+import team.exp.dimagsekhelo.Activity.ContestSelectionScreen;
+import team.exp.dimagsekhelo.Activity.PaymentScreen;
+import team.exp.dimagsekhelo.Activity.PlayerSelectionScreen;
 import team.exp.dimagsekhelo.R;
 import team.exp.dimagsekhelo.Utils.DateUtils;
 import team.exp.dimagsekhelo.WebServiceResponseObjects.ContestMasterResponse;
+
+import static team.exp.dimagsekhelo.Utils.Codes.CONTEST_ID;
 
 public class ContestMasterAdapter extends ArrayAdapter<ContestMasterResponse> {
 
@@ -32,7 +37,7 @@ public class ContestMasterAdapter extends ArrayAdapter<ContestMasterResponse> {
     }
 
 
-    public View getView(int position, View view, ViewGroup parent) {
+    public View getView(final int position, View view, ViewGroup parent) {
         LayoutInflater inflater=context.getLayoutInflater();
         View rowView=inflater.inflate(R.layout.contest, null,true);
 
@@ -52,6 +57,25 @@ public class ContestMasterAdapter extends ArrayAdapter<ContestMasterResponse> {
         contestType.setText(contestMasterResponses.get(position).get_ContestType());
         contestButton.setText(contestMasterResponses.get(position).get_EntryFeePoints().equalsIgnoreCase("0") ? "Join" : context.getString(R.string.Rs)+contestMasterResponses.get(position).get_EntryFeePoints());
 
+        contestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Transfer the control from contest to Player Selection page
+                //Check if the entry fee is more than 0
+                if(!contestMasterResponses.get(position).get_EntryFeePoints().equalsIgnoreCase("0"))
+                {
+                    Intent intent = new Intent(context, PaymentScreen.class);
+                    intent.putExtra(CONTEST_ID,contestMasterResponses.get(position).get_ContestId());
+                    intent.putExtra("amount",contestMasterResponses.get(position).get_EntryFeePoints());
+                    context.startActivity(intent);
+                }else {
+
+                    Intent intent = new Intent(context, PlayerSelectionScreen.class);
+                    intent.putExtra(CONTEST_ID, contestMasterResponses.get(position).get_ContestId());
+                    context.startActivity(intent);
+                }
+            }
+        });
 
         return rowView;
     }

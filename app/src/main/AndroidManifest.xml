@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ContestSelectionScreen"></activity>
-        <activity android:name=".Activity.HomeScreen" />
+        <activity android:name=".Activity.UserContestsScreen"></activity>
+        <activity android:name=".Activity.TeamPreviewScreen" />
+        <activity android:name=".Activity.CaptainSelectionScreen" />
+        <activity android:name=".Activity.PaymentScreen" />
+        <activity android:name=".Activity.PlayerSelectionScreen" />
+        <activity android:name=".Activity.ContestSelectionScreen" />
+        <activity
+            android:name=".Activity.HomeScreen"
+            android:launchMode="singleTask" />
         <activity android:name=".Activity.MyProfileScreen" />
         <activity android:name=".Activity.SignUpScreen" />
         <activity android:name=".Activity.SignInScreen" />
@@ -22,6 +29,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        /**
+        */
+        * Add your API key
+        */
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_AGDBBTPRM2l7cj"
+            />
+
     </application>
+
+
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>

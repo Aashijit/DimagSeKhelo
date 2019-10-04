@@ -14,6 +14,21 @@ public interface Codes {
     public static String MATCH_ID="MatchId";
     public static String MATCH_NAME="MatchName";
 
+    public static String CONTEST_ID="ContestId";
+    public static String TEAM="Team";
+
+
+    public static String CONTESTS="Contests";
+    public static String TEAMS="Teams";
+
+
+    public static String API_KEY_ID="rzp_test_AGDBBTPRM2l7cj";
+    public static String API_KEY_SECRET="gScUQOiEChfkxWs2SGNSyguk";
+
+    public static String BATSMAN="Batsman";
+    public static String BOWLER="Bowler";
+    public static String ALL_ROUNDER="All rounder";
+
 
     //Error Codes
     public static String RC_SUCCESS="0";

@@ -1,0 +1,161 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@drawable/bottomborder"
+    android:orientation="vertical"
+    android:weightSum="50"
+    android:layout_marginLeft="10sp"
+    android:layout_marginRight="10sp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:weightSum="100"
+        android:gravity="bottom"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        >
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prize Pool"
+            android:layout_weight="50"
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entry"
+            android:gravity="right"
+            android:layout_weight="50"
+            />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:weightSum="100"
+        android:padding="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/myContestPrizePool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Rs"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_weight="99"
+            />
+
+        <android.support.v7.widget.AppCompatButton
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/checkTeams"
+            android:text="Team"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/teams"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
+
+        <ProgressBar
+            android:id="@+id/myContestSpotsRemainingBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="60"
+            android:layout_weight="10" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:weightSum="100"
+        android:gravity="top"
+        android:orientation="horizontal"
+        >
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/myContestSpotsRemaining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17,234 spots remaining"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_weight="50"
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/myContestTotalSpots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20,000 spots"
+            android:gravity="right"
+            android:layout_weight="50"
+            />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
+        android:weightSum="100"
+        android:gravity="center_vertical"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:paddingLeft="4dp"
+        android:background="@color/vlightgrey"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/trophy"
+            android:paddingRight="5dp"
+            />
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/myContestTotalWinnersText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12,000 winners"
+            android:textColor="@color/blue"
+            android:layout_weight="97"
+            />
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/myContestType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+            android:text="Final Showoff"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_weight="2"
+            />
+
+
+    </LinearLayout>
+</LinearLayout>

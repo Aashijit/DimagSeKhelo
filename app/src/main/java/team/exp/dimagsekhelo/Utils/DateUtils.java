@@ -11,7 +11,7 @@ public class DateUtils {
 
     public String getTimeDifferenceFromCurrentTime(String date1){
         Date date  = getDateFromString(date1);
-        Log.d("Date ",date.toString());
+        Log.d("Date ",date1 +" --> "+date.toString());
         Date currentDate = new Date();
         Double difference = 0D;
 

@@ -59,7 +59,7 @@
         <android.support.v7.widget.AppCompatButton
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="25"
             android:drawableTop="@drawable/ic_person_white_24dp"
             android:text="Profile"
@@ -67,29 +67,35 @@
             android:textColor="@color/white" />
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/viewContestButton"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="25"
-            android:drawableTop="@drawable/ic_history_white_24dp"
-            android:text="History"
-            android:textColor="@color/white" />
+            android:drawableTop="@drawable/contesticon"
+            android:text="Contests"
+            android:enabled="false"
+            android:textColor="@color/white"
+            android:onClick="viewContest"/>
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/viewTeamButton"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:drawableTop="@drawable/teams"
+            android:text="Teams"
+            android:enabled="false"
+            android:textColor="@color/white"
+            android:onClick="viewTeam"/>
 
 
         <android.support.v7.widget.AppCompatButton
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="25"
-            android:drawableTop="@drawable/ic_attach_money_white_24dp"
-            android:text="Points"
-            android:textColor="@color/white" />
-
-
-        <android.support.v7.widget.AppCompatButton
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="25"
             android:drawableTop="@drawable/ic_library_books_white_24dp"
             android:text="Rules"

@@ -1,0 +1,68 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/vlightgrey"
+    android:orientation="horizontal"
+    android:weightSum="50"
+    android:layout_marginLeft="10sp"
+    android:layout_marginTop="10dp"
+    android:elevation="2dp"
+    android:gravity="center_vertical"
+    android:layout_marginRight="10sp"
+    >
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/captainSelectionPlayerType"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/batsman"
+        android:padding="13dp"
+        android:layout_weight="5"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/captainSelectionPlayerName"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="James Anderson"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:layout_weight="30"
+        android:textSize="15dp"
+        style="@style/TextAppearance.AppCompat.Headline"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/captainSelection"
+        android:layout_width="8dp"
+        android:layout_height="wrap_content"
+        android:text="C"
+        android:textColor="@color/lightgrey"
+        android:textStyle="bold"
+        android:background="@drawable/allsidebordernotfocussed"
+        android:layout_weight="8"
+        android:gravity="center"
+        android:textSize="10dp"
+
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/viceCaptainSelection"
+        android:layout_width="8dp"
+        android:layout_height="wrap_content"
+        android:text="VC"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:textColor="@color/lightgrey"
+        android:textStyle="bold"
+        android:background="@drawable/allsidebordernotfocussed"
+        android:layout_weight="7"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="10dp"
+
+        />
+
+</LinearLayout>

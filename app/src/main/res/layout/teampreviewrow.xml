@@ -1,0 +1,65 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/vlightgrey"
+    android:orientation="horizontal"
+    android:weightSum="50"
+    android:layout_marginLeft="10sp"
+    android:layout_marginTop="10dp"
+    android:elevation="2dp"
+    android:gravity="center_vertical"
+    android:layout_marginRight="10sp"
+    >
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/teamPreviewPlayerType"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/batsman"
+        android:padding="13dp"
+        android:layout_weight="5"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/teamPreviewPlayerName"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="James Anderson"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:layout_weight="30"
+        android:textSize="15dp"
+        style="@style/TextAppearance.AppCompat.Headline"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+    android:id="@+id/captainViceCaptainSelection"
+    android:layout_width="8dp"
+    android:layout_height="wrap_content"
+    android:text="VC"
+    android:textColor="@color/colorPrimaryDark"
+    android:textStyle="bold"
+    android:background="@drawable/allsideborder"
+    android:layout_weight="8"
+    android:gravity="center"
+    android:layout_marginRight="10dp"
+    android:textSize="10dp"
+    />
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/teamPreviewPlayerCredit"
+        android:layout_width="18dp"
+        android:layout_height="wrap_content"
+        android:text="7.9"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:background="@drawable/allsideborder"
+        android:layout_weight="7"
+        android:gravity="center"
+        android:layout_marginRight="10dp"
+        android:textSize="10dp"
+        />
+
+</LinearLayout>
