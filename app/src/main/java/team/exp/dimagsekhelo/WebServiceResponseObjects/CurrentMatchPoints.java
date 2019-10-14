@@ -1,15 +1,21 @@
 package team.exp.dimagsekhelo.WebServiceResponseObjects;
 
+import java.util.List;
+
 public class CurrentMatchPoints {
 
     private String _PlayerId;
     private String _PlayerName;
     private String _PlayerType;
     private String _RunsScored;
+    private String _BoundariesHit;
+    private String _OverBoundariesHit;
     private String _OversFaced;
     private String _BattingStatus;
     private String _MaidenOvers;
+    private List<WicketsTaken> wicketsTaken;
     private String _BowledOvers;
+    private String _RunsGiven;
     private String _BowlingStatus;
 
     public String get_PlayerId() {
@@ -44,6 +50,22 @@ public class CurrentMatchPoints {
         this._RunsScored = _RunsScored;
     }
 
+    public String get_BoundariesHit() {
+        return _BoundariesHit;
+    }
+
+    public void set_BoundariesHit(String _BoundariesHit) {
+        this._BoundariesHit = _BoundariesHit;
+    }
+
+    public String get_OverBoundariesHit() {
+        return _OverBoundariesHit;
+    }
+
+    public void set_OverBoundariesHit(String _OverBoundariesHit) {
+        this._OverBoundariesHit = _OverBoundariesHit;
+    }
+
     public String get_OversFaced() {
         return _OversFaced;
     }
@@ -68,12 +90,28 @@ public class CurrentMatchPoints {
         this._MaidenOvers = _MaidenOvers;
     }
 
+    public List<WicketsTaken> getWicketsTaken() {
+        return wicketsTaken;
+    }
+
+    public void setWicketsTaken(List<WicketsTaken> wicketsTaken) {
+        this.wicketsTaken = wicketsTaken;
+    }
+
     public String get_BowledOvers() {
         return _BowledOvers;
     }
 
     public void set_BowledOvers(String _BowledOvers) {
         this._BowledOvers = _BowledOvers;
+    }
+
+    public String get_RunsGiven() {
+        return _RunsGiven;
+    }
+
+    public void set_RunsGiven(String _RunsGiven) {
+        this._RunsGiven = _RunsGiven;
     }
 
     public String get_BowlingStatus() {
@@ -91,10 +129,14 @@ public class CurrentMatchPoints {
                 ", _PlayerName='" + _PlayerName + '\'' +
                 ", _PlayerType='" + _PlayerType + '\'' +
                 ", _RunsScored='" + _RunsScored + '\'' +
+                ", _BoundariesHit='" + _BoundariesHit + '\'' +
+                ", _OverBoundariesHit='" + _OverBoundariesHit + '\'' +
                 ", _OversFaced='" + _OversFaced + '\'' +
                 ", _BattingStatus='" + _BattingStatus + '\'' +
                 ", _MaidenOvers='" + _MaidenOvers + '\'' +
+                ", wicketsTaken=" + wicketsTaken +
                 ", _BowledOvers='" + _BowledOvers + '\'' +
+                ", _RunsGiven='" + _RunsGiven + '\'' +
                 ", _BowlingStatus='" + _BowlingStatus + '\'' +
                 '}';
     }

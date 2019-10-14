@@ -48,4 +48,13 @@ public interface Codes {
 
 
     public static String RM_FAILURE="Something has gone wrong !!!";
+
+
+    public static String WICKET_TYPE_CAUGHT="Caught";
+    public static String WICKET_TYPE_CB="CB";
+    public static String WICKET_TYPE_STUMPING="STUMPING";
+
+
+    public static String BATTING_STATUS_OUT="OUT";
+
 }
