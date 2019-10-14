@@ -27,12 +27,8 @@ public class PaymentScreen extends AppCompatActivity implements PaymentResultLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_screen);
-
         textView = findViewById(R.id.paymentScreenText);
-
         amt= getIntent().getStringExtra("amount");
-
-
         textView.setText("You are about to pay "+getString(R.string.Rs)+amt+"/- to join the contest, only then you will be allowed to create team.");
 
     }

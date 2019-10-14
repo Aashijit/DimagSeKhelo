@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.UserContestsScreen"></activity>
+        <activity android:name=".Activity.PointChangeScreen"></activity>
+        <activity android:name=".Activity.UserContestsScreen" />
         <activity android:name=".Activity.TeamPreviewScreen" />
         <activity android:name=".Activity.CaptainSelectionScreen" />
         <activity android:name=".Activity.PaymentScreen" />
@@ -30,19 +31,10 @@
             </intent-filter>
         </activity>
 
-
-        /**
-        */
-        * Add your API key
-        */
         <meta-data
             android:name="com.razorpay.ApiKey"
-            android:value="rzp_test_AGDBBTPRM2l7cj"
-            />
-
+            android:value="rzp_test_AGDBBTPRM2l7cj" />
     </application>
-
-
 
     <uses-permission android:name="android.permission.CAMERA" />
 
