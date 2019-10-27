@@ -264,8 +264,6 @@ public class PointGenerationSystem implements Codes {
             }
         }
 
-        //TILL HERE
-
         //Bonus
 
         if(currentMatchPoints.get_BoundariesHit() != null)
@@ -448,6 +446,7 @@ public class PointGenerationSystem implements Codes {
      * @return
      */
     public Double getPointsForTest(CurrentMatchPoints currentMatchPoints){
+
         return null;
     }
 

@@ -55,6 +55,13 @@ public interface Codes {
     public static String WICKET_TYPE_STUMPING="STUMPING";
 
 
-    public static String BATTING_STATUS_OUT="OUT";
+    public static String BATTING_STATUS_BATTING="Batting";
+    public static String BOWLING_STATUS_BOWLING="Bowling";
+    public static String BATTING_STATUS_OUT = "Out";
+
+
+    public static String MATCH_TYPE_ODI="ODI";
+    public static String MATCH_TYPE_T20="T20";
+
 
 }

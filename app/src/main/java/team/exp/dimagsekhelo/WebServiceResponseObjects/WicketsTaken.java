@@ -5,6 +5,10 @@ public class WicketsTaken {
     private String _Wicket;
     private String _Type;
 
+    public WicketsTaken(String _Type) {
+        this._Type = _Type;
+    }
+
     public String get_Wicket() {
         return _Wicket;
     }

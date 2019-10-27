@@ -46,6 +46,9 @@ public class SplashScreen extends AppCompatActivity {
     //UI Connector methods start from here
     public void splashScreenLetsPlay(View view) {
 
+        Intent intent = new Intent(SplashScreen.this, PointChangeScreen.class);
+        startActivity(intent);
+
     }
 
     public void splashScreenLogIn(View view) {

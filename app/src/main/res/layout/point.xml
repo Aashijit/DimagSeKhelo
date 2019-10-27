@@ -1,7 +1,7 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bottomborder"
     android:orientation="horizontal"
     android:weightSum="50"
@@ -9,8 +9,7 @@
     android:elevation="2dp"
     android:layout_marginLeft="10sp"
     android:layout_marginRight="10sp"
-    android:padding="10sp"
-    >
+    android:padding="10sp">
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/pointSystemPlayerType"
         android:layout_width="wrap_content"
@@ -67,11 +66,11 @@
         android:padding="2sp"
         />
 
-    <android.support.v7.widget.AppCompatTextView
+    <android.support.v7.widget.AppCompatImageView
         android:id="@+id/pointSystemBattingStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="B"
+        app:srcCompat="@drawable/ic_on"
         android:gravity="center_horizontal"
         android:background="@drawable/rightborder"
         android:textColor="@color/colorPrimaryDark"
@@ -106,11 +105,11 @@
         android:textSize="10dp"
         android:padding="2sp"
         />
-    <android.support.v7.widget.AppCompatTextView
+    <android.support.v7.widget.AppCompatImageView
         android:id="@+id/pointSystemBowlingStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1"
+        app:srcCompat="@drawable/ic_off"
         android:gravity="center_horizontal"
         android:background="@drawable/rightborder"
         android:textColor="@color/colorPrimaryDark"
@@ -132,6 +131,4 @@
         android:textSize="14dp"
         android:padding="2sp"
         />
-
-
 </LinearLayout>

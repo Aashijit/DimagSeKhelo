@@ -74,7 +74,7 @@
             android:ellipsize="marquee"
             android:gravity="center_horizontal"
             android:padding="2sp"
-            android:text="Player name"
+            android:text="Player Name"
             android:textColor="@color/white"
             android:textSize="15dp" />
 

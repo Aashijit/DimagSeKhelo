@@ -4,6 +4,8 @@ import java.util.List;
 
 public class CurrentMatchPoints {
 
+    private String _ContestId;
+    private String _MatchId;
     private String _PlayerId;
     private String _PlayerName;
     private String _PlayerType;
@@ -17,6 +19,23 @@ public class CurrentMatchPoints {
     private String _BowledOvers;
     private String _RunsGiven;
     private String _BowlingStatus;
+
+
+    public String get_ContestId() {
+        return _ContestId;
+    }
+
+    public void set_ContestId(String _ContestId) {
+        this._ContestId = _ContestId;
+    }
+
+    public String get_MatchId() {
+        return _MatchId;
+    }
+
+    public void set_MatchId(String _MatchId) {
+        this._MatchId = _MatchId;
+    }
 
     public String get_PlayerId() {
         return _PlayerId;
@@ -125,7 +144,9 @@ public class CurrentMatchPoints {
     @Override
     public String toString() {
         return "CurrentMatchPoints{" +
-                "_PlayerId='" + _PlayerId + '\'' +
+                "_ContestId='" + _ContestId + '\'' +
+                ", _MatchId='" + _MatchId + '\'' +
+                ", _PlayerId='" + _PlayerId + '\'' +
                 ", _PlayerName='" + _PlayerName + '\'' +
                 ", _PlayerType='" + _PlayerType + '\'' +
                 ", _RunsScored='" + _RunsScored + '\'' +
