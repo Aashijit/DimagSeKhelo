@@ -45,6 +45,7 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
     private DatabaseReference databaseReferenceContestUser;
 
     private String contestId;
+    private String amount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +58,14 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
         firebaseAuth = FirebaseAuth.getInstance();
 
         contestId = getIntent().getStringExtra(CONTEST_ID);
+        amount = getIntent().getStringExtra("amount");
 
         if(getIntent().getStringExtra("OnlyView") != null)
         {
             joinContestButton.setVisibility(View.GONE);
         }
+
+
 
         if(contestId == null){
             Toast.makeText(getApplicationContext(),"Please select a valid Contest !!!",Toast.LENGTH_LONG).show();
@@ -76,8 +80,18 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
 
         playerResponseList = getIntent().getParcelableArrayListExtra(TEAM);
 
+
+        List<PlayerResponse> finalPlayerResponses = new ArrayList<>();
+
+        for(PlayerResponse playerResponse : playerResponseList){
+            Log.d(this.getClass().getName(),playerResponse.toString());
+            if(playerResponse.getPlayerSelected() != null)
+                if(playerResponse.getPlayerSelected())
+                    finalPlayerResponses.add(playerResponse);
+        }
+
         //Paint the screen
-        teamPreviewAdapter = new TeamPreviewAdapter(this, playerResponseList);
+        teamPreviewAdapter = new TeamPreviewAdapter(this, finalPlayerResponses);
         teamPreviewList.setAdapter(teamPreviewAdapter);
 
     }
@@ -87,6 +101,8 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
     }
 
     public void joinContest(View view) {
+
+
 
         //Step 1 : Insert a row in the team contest json
         String captainPlayerId ="";
@@ -164,10 +180,18 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(),"Contest Joining Successful",Toast.LENGTH_LONG).show();
 
-                    Intent intent= new Intent(TeamPreviewScreen.this, HomeScreen.class);
-                    startActivity(intent);
+                    Log.d(this.getClass().getName(),amount+" Received");
+                    //Check if amount is present or null
+                    if(amount != null) {
+                        Intent intent = new Intent(TeamPreviewScreen.this, PaymentScreen.class);
+                        intent.putExtra("amount",amount);
+                        startActivity(intent);
+                    }
+                    else {
+                        Intent intent = new Intent(TeamPreviewScreen.this, HomeScreen.class);
+                        startActivity(intent);
+                    }
                 }
             }
         });
