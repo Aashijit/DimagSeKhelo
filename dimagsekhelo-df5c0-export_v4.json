@@ -1,0 +1,310 @@
+{
+  "ContestMaster" : {
+    "Contest_001" : {
+      "_ContestId" : "1",
+      "_ContestType" : "Mega",
+      "_EntryFeePoints" : "33",
+      "_MatchId" : "1",
+      "_PrizePool" : "12,000",
+      "_TotalStrength" : "300",
+      "_TotalWinners" : "5000"
+    },
+    "Contest_002" : {
+      "_ContestId" : "2",
+      "_ContestType" : "Beginners",
+      "_EntryFeePoints" : "0",
+      "_MatchId" : "1",
+      "_PrizePool" : "30,000",
+      "_TotalStrength" : "500",
+      "_TotalWinners" : "34,000"
+    },
+    "Contest_003" : {
+      "_ContestId" : "3",
+      "_ContestType" : "Head-to-Head",
+      "_EntryFeePoints" : "37",
+      "_MatchId" : "2",
+      "_PrizePool" : "12,000",
+      "_TotalStrength" : "900",
+      "_TotalWinners" : "12,000"
+    }
+  },
+  "ContestUser" : {
+    "-LsFinGJ4eO2vkDYzqe5" : {
+      "_ContestId" : "1",
+      "_TeamId" : "1572238734342",
+      "_UserPhoneNumber" : "+918910473248"
+    },
+    "-LsjyQFejYSkFTMfCXj1" : {
+      "_ContestId" : "2",
+      "_TeamId" : "1572762922787",
+      "_UserPhoneNumber" : "+918910473248"
+    }
+  },
+  "CurrentMatches" : {
+    "CurrentMatchPlayer_001" : {
+      "_BattingStatus" : "Batting",
+      "_BoundariesHit" : "0",
+      "_BowledOvers" : "5",
+      "_BowlingStatus" : "Bowling",
+      "_ContestId" : "1",
+      "_MaidenOvers" : "1",
+      "_MatchId" : "1",
+      "_OverBoundariesHit" : "0",
+      "_OversFaced" : "0",
+      "_PlayerId" : "1",
+      "_PlayerName" : "Mohit Mukhopadhyay",
+      "_PlayerType" : "Batsman",
+      "_RunsGiven" : "10",
+      "_RunsScored" : "0",
+      "wicketsTaken" : {
+        "Wicket_001" : {
+          "_Type" : "CB",
+          "_Wicket" : "1"
+        },
+        "Wicket_002" : {
+          "_Type" : "Caught",
+          "_Wicket" : "2"
+        }
+      }
+    },
+    "CurrentMatchPlayer_002" : {
+      "_BattingStatus" : "Batting",
+      "_BoundariesHit" : "10",
+      "_BowledOvers" : "0",
+      "_BowlingStatus" : "",
+      "_ContestId" : "1",
+      "_MaidenOvers" : "0",
+      "_MatchId" : "1",
+      "_OverBoundariesHit" : "4",
+      "_OversFaced" : "30",
+      "_PlayerId" : "2",
+      "_PlayerName" : "Durjoy Kamra",
+      "_PlayerType" : "Bowler",
+      "_RunsGiven" : "0",
+      "_RunsScored" : "200"
+    }
+  },
+  "MatchStatus" : {
+    "_MatchId" : "1",
+    "_MatchStatus" : "Running"
+  },
+  "PlayerMasterContest" : {
+    "Player_001" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.5",
+      "_PlayerId" : "1",
+      "_PlayerName" : "Virat Kohli",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Batsman"
+    },
+    "Player_002" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.0",
+      "_PlayerId" : "2",
+      "_PlayerName" : "Andy Bichel",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Bowler"
+    },
+    "Player_003" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.5",
+      "_PlayerId" : "3",
+      "_PlayerName" : "Sourav Ganguly",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Batsman"
+    },
+    "Player_004" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "8.0",
+      "_PlayerId" : "4",
+      "_PlayerName" : "Glen McGrath",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Bowler"
+    },
+    "Player_005" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "7.5",
+      "_PlayerId" : "5",
+      "_PlayerName" : "Shane Bond",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Bowler"
+    },
+    "Player_006" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "5.5",
+      "_PlayerId" : "6",
+      "_PlayerName" : "Mark Boucher",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "All rounder"
+    },
+    "Player_007" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.0",
+      "_PlayerId" : "7",
+      "_PlayerName" : "Kapil Dev",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "All rounder"
+    },
+    "Player_008" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "8.0",
+      "_PlayerId" : "8",
+      "_PlayerName" : "Sanath Jaisurya",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "All rounder"
+    },
+    "Player_009" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.5",
+      "_PlayerId" : "9",
+      "_PlayerName" : "MS Dhoni",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Batsman"
+    },
+    "Player_010" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "8.5",
+      "_PlayerId" : "10",
+      "_PlayerName" : "Stephen Fleming",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Batsman"
+    },
+    "Player_011" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.5",
+      "_PlayerId" : "11",
+      "_PlayerName" : "Joel Garner",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Bowler"
+    },
+    "Player_012" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.5",
+      "_PlayerId" : "12",
+      "_PlayerName" : "Brett Lee",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Bowler"
+    }
+  },
+  "TeamContest" : {
+    "-LsFin2y6cCtVDT8oGG5" : {
+      "_CaptainPlayerId" : "2",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572238734342",
+      "_TeamName" : "DSK Team",
+      "_UserPhoneNumber" : "+918910473248",
+      "_ViceCaptainPlayerId" : "3",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "12"
+      } ]
+    },
+    "-LsjyQAC-p0CqfOBZcRS" : {
+      "_CaptainPlayerId" : "2",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572762922787",
+      "_TeamName" : "DSK Team",
+      "_UserPhoneNumber" : "+918910473248",
+      "_ViceCaptainPlayerId" : "4",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "12"
+      } ]
+    }
+  },
+  "UpcomingMatches" : {
+    "Match_001" : {
+      "_Caption" : "India Vs Australia 3rd ODI",
+      "_Id" : "1",
+      "_IsActive" : "1",
+      "_MatchTime" : "2019-10-10 21:45",
+      "_MatchType" : "ODI",
+      "_TeamName1" : "IND",
+      "_TeamName2" : "AUS"
+    },
+    "Match_002" : {
+      "_Caption" : "Ashes Cup 4th ODI",
+      "_Id" : "2",
+      "_IsActive" : "1",
+      "_MatchTime" : "2019-10-10 21:45",
+      "_MatchType" : "ODI",
+      "_TeamName1" : "BNG",
+      "_TeamName2" : "IND"
+    },
+    "Match_003" : {
+      "_Caption" : "New Zealand Vs Afganisthan 5th ODI",
+      "_Id" : "3",
+      "_IsActive" : "1",
+      "_MatchTime" : "2019-10-12 21:00",
+      "_MatchType" : "T20",
+      "_TeamName1" : "AFG",
+      "_TeamName2" : "NZN"
+    },
+    "Match_004" : {
+      "_Caption" : "India Vs West Indies World Cup",
+      "_Id" : "4",
+      "_IsActive" : "1",
+      "_MatchTime" : "2019-10-20 20:00",
+      "_MatchType" : "T20",
+      "_TeamName1" : "IND",
+      "_TeamName2" : "WIN"
+    },
+    "Match_005" : {
+      "_Caption" : "India First ODI",
+      "_Id" : "5",
+      "_IsActive" : "1",
+      "_MatchTime" : "2019-11-06 14:20",
+      "_MatchType" : "ODI",
+      "_TeamName1" : "IND",
+      "_TeamName2" : "AUS"
+    }
+  },
+  "UserProfile" : {
+    "-LpSwVBjre6LRNdQk_5B" : {
+      "_EmailId" : "aashijitM@gmail.com",
+      "_HashedPassword" : "�\u000E�&Cf�\u000F�v���i1�B����F��\u001D���`g\u0019}�JרiS���NP��#Ԯ8��\u0001�l�\u0017�Q�\u0010�",
+      "_MobileNumber" : "8910473248",
+      "_Salt" : "�.7\u001D\u0005n.��MDɰqɘ"
+    },
+    "-LpssfGk4aiFCvYct3gv" : {
+      "_EmailId" : "dipenmistry1993@gmail.com",
+      "_HashedPassword" : "\u0016\u0016�$���\u0005nv��Nl662��<�s�]���\u0012\u000B\u0010ܚ/�=>ڥB0�Jo)*ʟ\u000B\r��DnC��:��T",
+      "_MobileNumber" : "7044209610",
+      "_Salt" : "B�HX\u001D�@�Y���\u0019+ga"
+    }
+  }
+}

@@ -158,6 +158,13 @@
             android:textSize="14dp" />
     </LinearLayout>
 
+
+    <ListView
+        android:id="@+id/pointSystemList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="99"
+        />
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/totalPointsEarned"
         android:layout_width="match_parent"
@@ -168,12 +175,6 @@
         android:textStyle="bold"
         android:layout_marginRight="21sp"
         android:text="30.45"
-        />
-    <ListView
-        android:id="@+id/pointSystemList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="90"
         />
 
 

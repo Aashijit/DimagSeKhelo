@@ -25,19 +25,19 @@ public class PointGenerationSystem implements Codes {
         }
 
         //Step 3 : Every wicket taken
-        for(WicketsTaken wicketsTaken : currentMatchPoints.getWicketsTaken()){
-
-            points = points + 30.00;
-
-            if(wicketsTaken.get_Type().equalsIgnoreCase(WICKET_TYPE_CAUGHT))
-                points += 10.00;
-
-            if(wicketsTaken.get_Type().equalsIgnoreCase(WICKET_TYPE_CB))
-                points += 35.00;
-
-            if(wicketsTaken.get_Type().equalsIgnoreCase(WICKET_TYPE_STUMPING))
-                points += 15.00;
-        }
+//        for(WicketsTaken wicketsTaken : currentMatchPoints.getWicketsTaken()){
+//
+//            points = points + 30.00;
+//
+//            if(wicketsTaken.get_Type().equalsIgnoreCase(WICKET_TYPE_CAUGHT))
+//                points += 10.00;
+//
+//            if(wicketsTaken.get_Type().equalsIgnoreCase(WICKET_TYPE_CB))
+//                points += 35.00;
+//
+//            if(wicketsTaken.get_Type().equalsIgnoreCase(WICKET_TYPE_STUMPING))
+//                points += 15.00;
+//        }
 
             if(currentMatchPoints.get_PlayerType().equalsIgnoreCase(BATSMAN) || currentMatchPoints.get_PlayerType().equalsIgnoreCase(ALL_ROUNDER))
             {
@@ -82,30 +82,30 @@ public class PointGenerationSystem implements Codes {
             if(Double.parseDouble(currentMatchPoints.get_MaidenOvers()) > 0)
                 points += 10.00 * Double.parseDouble(currentMatchPoints.get_MaidenOvers());
         }
-
-        if(currentMatchPoints.getWicketsTaken() != null){
-
-            if(currentMatchPoints.getWicketsTaken().size() == 4){
-                points += 10.00;
-            }
-
-            if(currentMatchPoints.getWicketsTaken().size() == 5){
-                points += 20.00;
-            }
-
-            if(currentMatchPoints.getWicketsTaken().size() == 2){
-                points += 1.00;
-            }
-
-            if(currentMatchPoints.getWicketsTaken().size() == 3){
-                points += 1.00;
-            }
-
-            if(currentMatchPoints.get_RunsScored() != null)
-                if(currentMatchPoints.getWicketsTaken().size() == 3 && Double.parseDouble(currentMatchPoints.get_RunsScored()) == 30.00){
-                points += 20.00;
-            }
-        }
+//
+//        if(currentMatchPoints.getWicketsTaken() != null){
+//
+//            if(currentMatchPoints.getWicketsTaken().size() == 4){
+//                points += 10.00;
+//            }
+//
+//            if(currentMatchPoints.getWicketsTaken().size() == 5){
+//                points += 20.00;
+//            }
+//
+//            if(currentMatchPoints.getWicketsTaken().size() == 2){
+//                points += 1.00;
+//            }
+//
+//            if(currentMatchPoints.getWicketsTaken().size() == 3){
+//                points += 1.00;
+//            }
+//
+//            if(currentMatchPoints.get_RunsScored() != null)
+//                if(currentMatchPoints.getWicketsTaken().size() == 3 && Double.parseDouble(currentMatchPoints.get_RunsScored()) == 30.00){
+//                points += 20.00;
+//            }
+//        }
 
         if(currentMatchPoints.get_BowledOvers() != null){
             if(Double.parseDouble(currentMatchPoints.get_BowledOvers()) > 0.00){
@@ -239,19 +239,19 @@ public class PointGenerationSystem implements Codes {
         }
 
         //Step 3 : Every wicket taken
-        for(WicketsTaken wicketsTaken : currentMatchPoints.getWicketsTaken()){
-
-            points = points + 30.00;
-
-            if(wicketsTaken.get_Type().equalsIgnoreCase(WICKET_TYPE_CAUGHT))
-                points += 10.00;
-
-            if(wicketsTaken.get_Type().equalsIgnoreCase(WICKET_TYPE_CB))
-                points += 35.00;
-
-            if(wicketsTaken.get_Type().equalsIgnoreCase(WICKET_TYPE_STUMPING))
-                points += 15.00;
-        }
+//        for(WicketsTaken wicketsTaken : currentMatchPoints.getWicketsTaken()){
+//
+//            points = points + 30.00;
+//
+//            if(wicketsTaken.get_Type().equalsIgnoreCase(WICKET_TYPE_CAUGHT))
+//                points += 10.00;
+//
+//            if(wicketsTaken.get_Type().equalsIgnoreCase(WICKET_TYPE_CB))
+//                points += 35.00;
+//
+//            if(wicketsTaken.get_Type().equalsIgnoreCase(WICKET_TYPE_STUMPING))
+//                points += 15.00;
+//        }
 
         if(currentMatchPoints.get_PlayerType().equalsIgnoreCase(BATSMAN) || currentMatchPoints.get_PlayerType().equalsIgnoreCase(ALL_ROUNDER))
         {
@@ -297,29 +297,29 @@ public class PointGenerationSystem implements Codes {
                 points += 6.00 * Double.parseDouble(currentMatchPoints.get_MaidenOvers());
         }
 
-        if(currentMatchPoints.getWicketsTaken() != null){
-
-            if(currentMatchPoints.getWicketsTaken().size() == 4){
-                points += 5.00;
-            }
-
-            if(currentMatchPoints.getWicketsTaken().size() == 5){
-                points += 10.00;
-            }
-
-            if(currentMatchPoints.getWicketsTaken().size() == 2){
-                points += 1.00;
-            }
-
-            if(currentMatchPoints.getWicketsTaken().size() == 3){
-                points += 1.00;
-            }
-
-            if(currentMatchPoints.get_RunsScored() != null)
-                if(currentMatchPoints.getWicketsTaken().size() == 4 && Double.parseDouble(currentMatchPoints.get_RunsScored()) == 50.00){
-                    points += 25.00;
-                }
-        }
+//        if(currentMatchPoints.getWicketsTaken() != null){
+//
+//            if(currentMatchPoints.getWicketsTaken().size() == 4){
+//                points += 5.00;
+//            }
+//
+//            if(currentMatchPoints.getWicketsTaken().size() == 5){
+//                points += 10.00;
+//            }
+//
+//            if(currentMatchPoints.getWicketsTaken().size() == 2){
+//                points += 1.00;
+//            }
+//
+//            if(currentMatchPoints.getWicketsTaken().size() == 3){
+//                points += 1.00;
+//            }
+//
+//            if(currentMatchPoints.get_RunsScored() != null)
+//                if(currentMatchPoints.getWicketsTaken().size() == 4 && Double.parseDouble(currentMatchPoints.get_RunsScored()) == 50.00){
+//                    points += 25.00;
+//                }
+//        }
 
         //FIXME: Change here minimum number of balls to be incorporated
 //        if(currentMatchPoints.get_BowledOvers() != null){

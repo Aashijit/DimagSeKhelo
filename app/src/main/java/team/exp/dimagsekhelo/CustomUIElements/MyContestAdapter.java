@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import team.exp.dimagsekhelo.Activity.PointChangeScreen;
+import team.exp.dimagsekhelo.Activity.SplashScreen;
 import team.exp.dimagsekhelo.Activity.TeamPreviewScreen;
 import team.exp.dimagsekhelo.R;
 import team.exp.dimagsekhelo.Utils.DateUtils;
@@ -32,9 +34,11 @@ import team.exp.dimagsekhelo.WebServiceRequestObjects.ContestUserRequest;
 import team.exp.dimagsekhelo.WebServiceRequestObjects.PlayerTeamContest;
 import team.exp.dimagsekhelo.WebServiceRequestObjects.TeamContestRequest;
 import team.exp.dimagsekhelo.WebServiceResponseObjects.ContestMasterResponse;
+import team.exp.dimagsekhelo.WebServiceResponseObjects.MatchStatus;
 import team.exp.dimagsekhelo.WebServiceResponseObjects.PlayerResponse;
 
 import static team.exp.dimagsekhelo.Utils.Codes.CONTEST_ID;
+import static team.exp.dimagsekhelo.Utils.Codes.MATCH_ID;
 import static team.exp.dimagsekhelo.Utils.Codes.TEAM;
 
 
@@ -49,6 +53,7 @@ public class MyContestAdapter extends ArrayAdapter<ContestMasterResponse> {
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReferencePlayerMaster = database.getReference("PlayerMasterContest");
     DatabaseReference databaseReferenceTeamContest = database.getReference("TeamContest");
+    DatabaseReference databaseReferenceTeamMatchStatus = database.getReference("MatchStatus");
 
 
 
@@ -72,6 +77,7 @@ public class MyContestAdapter extends ArrayAdapter<ContestMasterResponse> {
         final TextView contestsTotalWinners = (TextView) rowView.findViewById(R.id.myContestTotalWinnersText);
         final TextView contestType = (TextView) rowView.findViewById(R.id.myContestType);
         final Button contestButton = (Button) rowView.findViewById(R.id.checkTeams);
+        final Button checkUpdateButton = (Button) rowView.findViewById(R.id.checkUpdateButton);
 
 
         contestPrizePool.setText(context.getString(R.string.Rs)+contestMasterResponses.get(position).get_PrizePool());
@@ -79,6 +85,54 @@ public class MyContestAdapter extends ArrayAdapter<ContestMasterResponse> {
         progressBarSpotsRemaining.setMax(Integer.parseInt(contestMasterResponses.get(position).get_TotalStrength()));
         contestsTotalWinners.setText(contestMasterResponses.get(position).get_TotalWinners()+" Winners");
         contestType.setText(contestMasterResponses.get(position).get_ContestType());
+
+        databaseReferenceTeamMatchStatus.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    MatchStatus matchStatus = dataSnapshot1.getValue(MatchStatus.class);
+                    if(matchStatus == null)
+                        return;
+                    if(matchStatus.get_MatchId().equals(contestMasterResponses.get(position).get_MatchId())){
+                        if(matchStatus.get_MatchStatus().equalsIgnoreCase("Running")) {
+                            checkUpdateButton.setEnabled(true);
+                            animateButton(checkUpdateButton);
+                        } else if(matchStatus.get_MatchStatus().equalsIgnoreCase("Ended")){
+                            checkUpdateButton.setText("Check Points");
+                            checkUpdateButton.setEnabled(true);
+                            animateButton(checkUpdateButton);
+                        }
+
+                            checkUpdateButton.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+
+                                    if(checkUpdateButton.getText().toString().equalsIgnoreCase("Check Update")) {
+
+                                        Intent intent = new Intent(context, PointChangeScreen.class);
+                                        intent.putExtra(MATCH_ID, contestMasterResponses.get(position).get_MatchId());
+                                        intent.putExtra(CONTEST_ID, contestMasterResponses.get(position).get_ContestId());
+                                        context.startActivity(intent);
+                                    } else if(checkUpdateButton.getText().toString().equalsIgnoreCase("Check Points")){
+
+                                        Intent intent = new Intent(context, PointChangeScreen.class);
+                                        intent.putExtra(MATCH_ID, contestMasterResponses.get(position).get_MatchId());
+                                        intent.putExtra(CONTEST_ID, contestMasterResponses.get(position).get_ContestId());
+                                        context.startActivity(intent);
+                                    }
+                                }
+                            });
+                            break;
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
 
         //Fetch Team Details
         contestButton.setOnClickListener(new View.OnClickListener() {
@@ -164,6 +218,14 @@ public class MyContestAdapter extends ArrayAdapter<ContestMasterResponse> {
         textView.startAnimation(animation1);
     }
 
+    public void animateButton(Button button) {
+        Animation animation1 =
+                AnimationUtils.loadAnimation(context,
+                        R.anim.blink);
+        button.startAnimation(animation1);
+    }
+
+
 
     public String getTeamIdByContestId(String contestId){
         for(ContestUserRequest contestUserRequest : contestUserRequests){
@@ -181,6 +243,4 @@ public class MyContestAdapter extends ArrayAdapter<ContestMasterResponse> {
         }
         return null;
     }
-
-
 }

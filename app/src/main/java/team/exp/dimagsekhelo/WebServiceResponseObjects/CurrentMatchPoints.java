@@ -15,7 +15,6 @@ public class CurrentMatchPoints {
     private String _OversFaced;
     private String _BattingStatus;
     private String _MaidenOvers;
-    private List<WicketsTaken> wicketsTaken;
     private String _BowledOvers;
     private String _RunsGiven;
     private String _BowlingStatus;
@@ -109,13 +108,13 @@ public class CurrentMatchPoints {
         this._MaidenOvers = _MaidenOvers;
     }
 
-    public List<WicketsTaken> getWicketsTaken() {
-        return wicketsTaken;
-    }
-
-    public void setWicketsTaken(List<WicketsTaken> wicketsTaken) {
-        this.wicketsTaken = wicketsTaken;
-    }
+//    public List<WicketsTaken> getWicketsTaken() {
+//        return wicketsTaken;
+//    }
+//
+//    public void setWicketsTaken(List<WicketsTaken> wicketsTaken) {
+//        this.wicketsTaken = wicketsTaken;
+//    }
 
     public String get_BowledOvers() {
         return _BowledOvers;
@@ -155,7 +154,6 @@ public class CurrentMatchPoints {
                 ", _OversFaced='" + _OversFaced + '\'' +
                 ", _BattingStatus='" + _BattingStatus + '\'' +
                 ", _MaidenOvers='" + _MaidenOvers + '\'' +
-                ", wicketsTaken=" + wicketsTaken +
                 ", _BowledOvers='" + _BowledOvers + '\'' +
                 ", _RunsGiven='" + _RunsGiven + '\'' +
                 ", _BowlingStatus='" + _BowlingStatus + '\'' +

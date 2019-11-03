@@ -1,7 +1,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="170dp"
     android:background="@drawable/bottomborder"
     android:orientation="vertical"
     android:weightSum="50"
@@ -64,6 +64,7 @@
             android:layout_weight="1"
             android:id="@+id/checkTeams"
             android:text="Team"
+            android:enabled="true"
             android:drawablePadding="10dp"
             android:drawableLeft="@drawable/teams"/>
     </LinearLayout>
@@ -142,7 +143,17 @@
             android:layout_height="wrap_content"
             android:text="12,000 winners"
             android:textColor="@color/blue"
-            android:layout_weight="97"
+            android:layout_weight="95"
+            />
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/checkUpdateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:enabled="false"
+            android:text="Check Update"
+            android:gravity="center"
+            android:layout_weight="4"
             />
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/myContestType"
@@ -153,7 +164,7 @@
             android:padding="5dp"
             android:gravity="center"
             android:textColor="@color/white"
-            android:layout_weight="2"
+            android:layout_weight="1"
             />
 
 
