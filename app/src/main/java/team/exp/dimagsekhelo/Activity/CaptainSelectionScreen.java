@@ -28,7 +28,7 @@ public class CaptainSelectionScreen extends AppCompatActivity implements Codes {
     private CaptainSelectionAdapter captainSelectionAdapter;
 
     private String contestId;
-
+    private String amount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,9 @@ public class CaptainSelectionScreen extends AppCompatActivity implements Codes {
 
         playerResponseList = getIntent().getParcelableArrayListExtra(TEAM);
         contestId = getIntent().getStringExtra(CONTEST_ID);
+        amount = getIntent().getStringExtra("amount");
+
+        Log.d(this.getClass().getName(),amount +" Captain Selection Received");
 
 
         if(playerResponseList == null)
@@ -83,6 +86,7 @@ public class CaptainSelectionScreen extends AppCompatActivity implements Codes {
         Intent intent = new Intent(CaptainSelectionScreen.this, TeamPreviewScreen.class);
         intent.putParcelableArrayListExtra(TEAM, (ArrayList<? extends Parcelable>) playerResponseList);
         intent.putExtra(CONTEST_ID,contestId);
+        intent.putExtra("amount",amount);
         startActivity(intent);
     }
 }

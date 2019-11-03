@@ -66,9 +66,9 @@ public class PaymentScreen extends AppCompatActivity implements PaymentResultLis
 
     @Override
     public void onPaymentSuccess(String s) {
-        Toast.makeText(getApplicationContext(),"Payment received !!!!" ,Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(PaymentScreen.this, PlayerSelectionScreen.class);
-        intent.putExtra(CONTEST_ID, getIntent().getStringExtra(CONTEST_ID));
+        Toast.makeText(getApplicationContext(),"Contest Joining Successful !!!!" ,Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(PaymentScreen.this, HomeScreen.class);
+//        intent.putExtra(CONTEST_ID, getIntent().getStringExtra(CONTEST_ID));
         startActivity(intent);
     }
 

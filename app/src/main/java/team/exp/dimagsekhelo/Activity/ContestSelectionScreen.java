@@ -25,6 +25,7 @@ import java.util.List;
 import team.exp.dimagsekhelo.CustomUIElements.ContestMasterAdapter;
 import team.exp.dimagsekhelo.R;
 import team.exp.dimagsekhelo.Utils.Codes;
+import team.exp.dimagsekhelo.WebServiceRequestObjects.ContestUserRequest;
 import team.exp.dimagsekhelo.WebServiceResponseObjects.ContestMasterResponse;
 
 public class ContestSelectionScreen extends AppCompatActivity implements Codes {
@@ -41,6 +42,7 @@ public class ContestSelectionScreen extends AppCompatActivity implements Codes {
 
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReferenceContestMaster = database.getReference("ContestMaster");
+    DatabaseReference databaseReferenceContestUser = database.getReference("ContestUser");
 
     private ContestMasterAdapter contestMasterAdapter;
 
@@ -80,6 +82,7 @@ public class ContestSelectionScreen extends AppCompatActivity implements Codes {
 
         Log.d(this.getClass().getName(),"Entered Here ");
         final List<ContestMasterResponse> contestMasterResponses = new ArrayList<>();
+        final List<String> joinedContests = new ArrayList<>();
         databaseReferenceContestMaster.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -93,13 +96,39 @@ public class ContestSelectionScreen extends AppCompatActivity implements Codes {
                      if(contestMasterResponse.get_MatchId().equalsIgnoreCase(matchId))
                          contestMasterResponses.add(contestMasterResponse);
                 }
-                //Step 2 : Update the List View
-                contestMasterAdapter = new ContestMasterAdapter(ContestSelectionScreen.this,contestMasterResponses);
-                listView.setAdapter(contestMasterAdapter);
-                progressBar.setVisibility(View.GONE);
+
+                //Step # : Fetch the contest user to check the contests the person has been a part of
+                databaseReferenceContestUser.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        if(dataSnapshot.exists()){
+
+                            for(DataSnapshot dsp : dataSnapshot.getChildren()){
+
+                                ContestUserRequest contestUserRequest = dsp.getValue(ContestUserRequest.class);
+
+                                if(contestUserRequest == null)
+                                    return;
+                                for(ContestMasterResponse contestMasterResponse : contestMasterResponses) {
+                                    if (contestUserRequest.get_ContestId().equalsIgnoreCase(contestMasterResponse.get_ContestId()))
+                                        joinedContests.add(contestUserRequest.get_ContestId());
+                                }
+                            }
+                        }
 
 
-                //Step 3 : Setup the list on click adapter
+                        //Step 2 : Update the List View
+                        contestMasterAdapter = new ContestMasterAdapter(ContestSelectionScreen.this,contestMasterResponses,joinedContests);
+                        listView.setAdapter(contestMasterAdapter);
+                        progressBar.setVisibility(View.GONE);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
 
             }
 

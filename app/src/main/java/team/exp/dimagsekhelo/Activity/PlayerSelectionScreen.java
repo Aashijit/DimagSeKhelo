@@ -44,7 +44,9 @@ public class PlayerSelectionScreen extends AppCompatActivity implements Codes {
     private PlayerAdapter playerAdapter;
 
     private String contestId ;
+
     private String matchId;
+    private String amount;
 
     List<PlayerResponse> playerResponses;
 
@@ -60,6 +62,8 @@ public class PlayerSelectionScreen extends AppCompatActivity implements Codes {
 
         contestId = getIntent().getStringExtra(CONTEST_ID);
         matchId = getIntent().getStringExtra(MATCH_ID);
+        amount = getIntent().getStringExtra("amount");
+        Log.d(this.getClass().getName(),amount +" Player Selection Received");
         playerResponses  = new ArrayList<>();
 
         progressBar.setVisibility(View.VISIBLE);
@@ -137,6 +141,7 @@ public class PlayerSelectionScreen extends AppCompatActivity implements Codes {
         Intent intent = new Intent(PlayerSelectionScreen.this, CaptainSelectionScreen.class);
         intent.putParcelableArrayListExtra(TEAM, (ArrayList<? extends Parcelable>) playerResponses);
         intent.putExtra(CONTEST_ID,contestId);
+        intent.putExtra("amount",amount);
         startActivity(intent);
     }
 }

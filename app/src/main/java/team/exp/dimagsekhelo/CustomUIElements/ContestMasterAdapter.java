@@ -28,12 +28,14 @@ public class ContestMasterAdapter extends ArrayAdapter<ContestMasterResponse> {
 
     private final Activity context;
     private List<ContestMasterResponse> contestMasterResponses;
+    private List<String> joinedContests;
     private DateUtils dateUtils;
 
-    public ContestMasterAdapter(Activity context, List<ContestMasterResponse> contestMasterResponses) {
+    public ContestMasterAdapter(Activity context, List<ContestMasterResponse> contestMasterResponses,List<String> joinedContests) {
         super(context, R.layout.contest, contestMasterResponses);
         this.context=context;
         this.contestMasterResponses = contestMasterResponses;
+        this.joinedContests = joinedContests;
         dateUtils = new DateUtils();
     }
 
@@ -51,6 +53,10 @@ public class ContestMasterAdapter extends ArrayAdapter<ContestMasterResponse> {
         final Button contestButton = (Button) rowView.findViewById(R.id.contestEntryFee);
 
 
+        String contestId = contestMasterResponses.get(position).get_ContestId();
+
+
+
         contestPrizePool.setText(context.getString(R.string.Rs)+contestMasterResponses.get(position).get_PrizePool());
         contestTotalSpots.setText(contestMasterResponses.get(position).get_TotalStrength()+" Spots");
         progressBarSpotsRemaining.setMax(Integer.parseInt(contestMasterResponses.get(position).get_TotalStrength()));
@@ -58,20 +64,27 @@ public class ContestMasterAdapter extends ArrayAdapter<ContestMasterResponse> {
         contestType.setText(contestMasterResponses.get(position).get_ContestType());
         contestButton.setText(contestMasterResponses.get(position).get_EntryFeePoints().equalsIgnoreCase("0") ? "Join" : context.getString(R.string.Rs)+contestMasterResponses.get(position).get_EntryFeePoints());
 
-        contestButton.setOnClickListener(new View.OnClickListener() {
+
+        if(contains(contestId,joinedContests))
+        {
+            contestButton.setText("Contest Joined");
+            contestButton.setEnabled(false);
+        }
+
+
+            contestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Transfer the control from contest to Player Selection page
                 //Check if the entry fee is more than 0
                 if(!contestMasterResponses.get(position).get_EntryFeePoints().equalsIgnoreCase("0"))
                 {
-                    Intent intent = new Intent(context, PaymentScreen.class);
+                    Intent intent = new Intent(context, PlayerSelectionScreen.class);
                     intent.putExtra(CONTEST_ID,contestMasterResponses.get(position).get_ContestId());
                     intent.putExtra(MATCH_ID,contestMasterResponses.get(position).get_MatchId());
                     intent.putExtra("amount",contestMasterResponses.get(position).get_EntryFeePoints());
                     context.startActivity(intent);
                 }else {
-
                     Intent intent = new Intent(context, PlayerSelectionScreen.class);
                     intent.putExtra(CONTEST_ID, contestMasterResponses.get(position).get_ContestId());
                     intent.putExtra(MATCH_ID,contestMasterResponses.get(position).get_MatchId());
@@ -88,6 +101,16 @@ public class ContestMasterAdapter extends ArrayAdapter<ContestMasterResponse> {
                 AnimationUtils.loadAnimation(context,
                         R.anim.blink);
         textView.startAnimation(animation1);
+    }
+
+
+    private boolean contains(String ctr, List<String> strings){
+
+        for(String string : strings){
+         if(string.equalsIgnoreCase(ctr))
+             return true;
+        }
+        return false;
     }
 
 
