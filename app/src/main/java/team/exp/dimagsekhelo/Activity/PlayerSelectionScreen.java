@@ -44,6 +44,7 @@ public class PlayerSelectionScreen extends AppCompatActivity implements Codes {
     private PlayerAdapter playerAdapter;
 
     private String contestId ;
+    private String matchId;
 
     List<PlayerResponse> playerResponses;
 
@@ -58,14 +59,15 @@ public class PlayerSelectionScreen extends AppCompatActivity implements Codes {
         progressBar = (ProgressBar) findViewById(R.id.progressBarCreateTeam);
 
         contestId = getIntent().getStringExtra(CONTEST_ID);
+        matchId = getIntent().getStringExtra(MATCH_ID);
         playerResponses  = new ArrayList<>();
 
         progressBar.setVisibility(View.VISIBLE);
-        fetchPlayersBasedOnContestId();
+        fetchPlayersBasedOnMatchId();
 
     }
 
-    private void fetchPlayersBasedOnContestId() {
+    private void fetchPlayersBasedOnMatchId() {
 
         Log.d(this.getClass().getName(),"Entered Here ");
 
@@ -79,7 +81,7 @@ public class PlayerSelectionScreen extends AppCompatActivity implements Codes {
                     Log.d(this.getClass().getName(),"Entered Here : "+playerResponse);
 
                     if(playerResponse != null)
-                        if(playerResponse.get_ContestId().equalsIgnoreCase(contestId))
+                        if(playerResponse.get_MatchId().equalsIgnoreCase(matchId))
                             playerResponses.add(playerResponse);
                 }
                 //Step 2 : Update the List View

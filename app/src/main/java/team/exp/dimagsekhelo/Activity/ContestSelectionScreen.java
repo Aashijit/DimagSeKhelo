@@ -23,11 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import team.exp.dimagsekhelo.CustomUIElements.ContestMasterAdapter;
-import team.exp.dimagsekhelo.CustomUIElements.UpcomingMatchesListAdapter;
 import team.exp.dimagsekhelo.R;
 import team.exp.dimagsekhelo.Utils.Codes;
 import team.exp.dimagsekhelo.WebServiceResponseObjects.ContestMasterResponse;
-import team.exp.dimagsekhelo.WebServiceResponseObjects.UpcomingMatchesResponse;
 
 public class ContestSelectionScreen extends AppCompatActivity implements Codes {
 
@@ -110,11 +108,6 @@ public class ContestSelectionScreen extends AppCompatActivity implements Codes {
                 Toast.makeText(getApplicationContext(),"No Contests Available !!! ", Toast.LENGTH_LONG).show();
             }
         });
-
-
-
-
-
     }
 
     public void contestSelectionGoBack(View view) {

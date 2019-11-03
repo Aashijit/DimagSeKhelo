@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class PlayerResponse implements Parcelable {
-    private String _ContestId;
+    private String _MatchId;
     private String _PlayerCredit;
     private String _PlayerId;
     private String _PlayerName;
@@ -20,7 +20,7 @@ public class PlayerResponse implements Parcelable {
     }
 
     protected PlayerResponse(Parcel in) {
-        _ContestId = in.readString();
+        _MatchId = in.readString();
         _PlayerCredit = in.readString();
         _PlayerId = in.readString();
         _PlayerName = in.readString();
@@ -46,12 +46,12 @@ public class PlayerResponse implements Parcelable {
         }
     };
 
-    public String get_ContestId() {
-        return _ContestId;
+    public String get_MatchId() {
+        return _MatchId;
     }
 
-    public void set_ContestId(String _ContestId) {
-        this._ContestId = _ContestId;
+    public void set_MatchId(String _MatchId) {
+        this._MatchId = _MatchId;
     }
 
     public String get_PlayerCredit() {
@@ -121,7 +121,7 @@ public class PlayerResponse implements Parcelable {
     @Override
     public String toString() {
         return "PlayerResponse{" +
-                "_ContestId='" + _ContestId + '\'' +
+                "_MatchId='" + _MatchId + '\'' +
                 ", _PlayerCredit='" + _PlayerCredit + '\'' +
                 ", _PlayerId='" + _PlayerId + '\'' +
                 ", _PlayerName='" + _PlayerName + '\'' +
@@ -141,7 +141,7 @@ public class PlayerResponse implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(_ContestId);
+        parcel.writeString(_MatchId);
         parcel.writeString(_PlayerCredit);
         parcel.writeString(_PlayerId);
         parcel.writeString(_PlayerName);

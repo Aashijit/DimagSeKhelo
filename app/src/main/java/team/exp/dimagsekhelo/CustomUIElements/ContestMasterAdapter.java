@@ -22,6 +22,7 @@ import team.exp.dimagsekhelo.Utils.DateUtils;
 import team.exp.dimagsekhelo.WebServiceResponseObjects.ContestMasterResponse;
 
 import static team.exp.dimagsekhelo.Utils.Codes.CONTEST_ID;
+import static team.exp.dimagsekhelo.Utils.Codes.MATCH_ID;
 
 public class ContestMasterAdapter extends ArrayAdapter<ContestMasterResponse> {
 
@@ -66,12 +67,14 @@ public class ContestMasterAdapter extends ArrayAdapter<ContestMasterResponse> {
                 {
                     Intent intent = new Intent(context, PaymentScreen.class);
                     intent.putExtra(CONTEST_ID,contestMasterResponses.get(position).get_ContestId());
+                    intent.putExtra(MATCH_ID,contestMasterResponses.get(position).get_MatchId());
                     intent.putExtra("amount",contestMasterResponses.get(position).get_EntryFeePoints());
                     context.startActivity(intent);
                 }else {
 
                     Intent intent = new Intent(context, PlayerSelectionScreen.class);
                     intent.putExtra(CONTEST_ID, contestMasterResponses.get(position).get_ContestId());
+                    intent.putExtra(MATCH_ID,contestMasterResponses.get(position).get_MatchId());
                     context.startActivity(intent);
                 }
             }

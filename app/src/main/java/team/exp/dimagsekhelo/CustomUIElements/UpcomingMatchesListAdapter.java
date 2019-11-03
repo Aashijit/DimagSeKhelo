@@ -61,8 +61,4 @@ public class UpcomingMatchesListAdapter extends ArrayAdapter<UpcomingMatchesResp
                         R.anim.blink);
         textView.startAnimation(animation1);
     }
-
-
-
-
 }

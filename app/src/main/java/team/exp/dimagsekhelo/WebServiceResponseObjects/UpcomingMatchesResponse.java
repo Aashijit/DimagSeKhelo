@@ -8,6 +8,7 @@ public class UpcomingMatchesResponse {
     private String _MatchTime;
     private String _TeamName1;
     private String _TeamName2;
+    private String _MatchType;
 
     public String get_Id() {
         return _Id;
@@ -57,6 +58,14 @@ public class UpcomingMatchesResponse {
         this._TeamName2 = _TeamName2;
     }
 
+    public String get_MatchType() {
+        return _MatchType;
+    }
+
+    public void set_MatchType(String _MatchType) {
+        this._MatchType = _MatchType;
+    }
+
     @Override
     public String toString() {
         return "UpcomingMatchesResponse{" +
@@ -66,6 +75,7 @@ public class UpcomingMatchesResponse {
                 ", _MatchTime='" + _MatchTime + '\'' +
                 ", _TeamName1='" + _TeamName1 + '\'' +
                 ", _TeamName2='" + _TeamName2 + '\'' +
+                ", _MatchType='" + _MatchType + '\'' +
                 '}';
     }
 }
