@@ -17,6 +17,10 @@ public class CurrentMatchPoints {
     private String _BowledOvers;
     private String _RunsGiven;
     private String _BowlingStatus;
+    private String _WicketsC;
+    private String _WicketsB;
+    private String _WicketsCB;
+    private String _WicketsR;
     private Double points;
 
 
@@ -116,14 +120,6 @@ public class CurrentMatchPoints {
         this._MaidenOvers = _MaidenOvers;
     }
 
-//    public List<WicketsTaken> getWicketsTaken() {
-//        return wicketsTaken;
-//    }
-//
-//    public void setWicketsTaken(List<WicketsTaken> wicketsTaken) {
-//        this.wicketsTaken = wicketsTaken;
-//    }
-
     public String get_BowledOvers() {
         return _BowledOvers;
     }
@@ -148,6 +144,38 @@ public class CurrentMatchPoints {
         this._BowlingStatus = _BowlingStatus;
     }
 
+    public String get_WicketsC() {
+        return _WicketsC;
+    }
+
+    public void set_WicketsC(String _WicketsC) {
+        this._WicketsC = _WicketsC;
+    }
+
+    public String get_WicketsB() {
+        return _WicketsB;
+    }
+
+    public void set_WicketsB(String _WicketsB) {
+        this._WicketsB = _WicketsB;
+    }
+
+    public String get_WicketsCB() {
+        return _WicketsCB;
+    }
+
+    public void set_WicketsCB(String _WicketsCB) {
+        this._WicketsCB = _WicketsCB;
+    }
+
+    public String get_WicketsR() {
+        return _WicketsR;
+    }
+
+    public void set_WicketsR(String _WicketsR) {
+        this._WicketsR = _WicketsR;
+    }
+
     @Override
     public String toString() {
         return "CurrentMatchPoints{" +
@@ -165,6 +193,10 @@ public class CurrentMatchPoints {
                 ", _BowledOvers='" + _BowledOvers + '\'' +
                 ", _RunsGiven='" + _RunsGiven + '\'' +
                 ", _BowlingStatus='" + _BowlingStatus + '\'' +
+                ", _WicketsC='" + _WicketsC + '\'' +
+                ", _WicketsB='" + _WicketsB + '\'' +
+                ", _WicketsCB='" + _WicketsCB + '\'' +
+                ", _WicketsR='" + _WicketsR + '\'' +
                 ", points=" + points +
                 '}';
     }

@@ -41,8 +41,11 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
     private FirebaseUser firebaseUser;
     private TextView textView;
     private Double totalPoints = 0.00d;
+    private String captainId, viceCaptainId;
 
-    public CurrentMatchAdapter(Activity context, List<CurrentMatchPoints> currentMatchPointsList,String matchType, TextView textView, DatabaseReference databaseReferenceContestUser, FirebaseUser firebaseUser) {
+    private List<ContestUserRequest> contestUserRequests;
+
+    public CurrentMatchAdapter(Activity context, List<CurrentMatchPoints> currentMatchPointsList,String matchType, TextView textView, DatabaseReference databaseReferenceContestUser, FirebaseUser firebaseUser, String captainId,String viceCaptainId) {
         super(context, R.layout.point, currentMatchPointsList);
         this.context = context;
         this.matchType = matchType;
@@ -51,6 +54,8 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
         pointGenerationSystem = new PointGenerationSystem();
         this.databaseReferenceContestUser = databaseReferenceContestUser;
         this.firebaseUser = firebaseUser;
+        this.captainId = captainId;
+        this.viceCaptainId = viceCaptainId;
     }
 
 
@@ -100,9 +105,9 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
 
         Double points = 0.00d;
         if(matchType.equalsIgnoreCase(MATCH_TYPE_ODI))
-            points = pointGenerationSystem.getPointsForODI(currentMatchPoints);
+            points = pointGenerationSystem.getPointsForODI(currentMatchPoints,captainId,viceCaptainId);
         else if(matchType.equalsIgnoreCase(MATCH_TYPE_T20))
-            points = pointGenerationSystem.getPointsForODI(currentMatchPoints);
+            points = pointGenerationSystem.getPointsForODI(currentMatchPoints,captainId,viceCaptainId);
 
         pointsEarned.setText(points+"");
         currentMatchPoints.setPoints(points);
@@ -119,6 +124,8 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
 
 
         //Update the total Points
+        //Fetch all the Contest Users and also calculate the rank
+
         databaseReferenceContestUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -140,6 +147,8 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
 
                                   if(task.isSuccessful()){
                                       Toast.makeText(context,"Points updated !!!",Toast.LENGTH_SHORT).show();
+                                      //update the ranks by fetching all the contest user records
+                                      updateRanks();
                                 }
                             }
                         });
@@ -155,6 +164,23 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
             }
         });
         return rowView;
+    }
+
+    private void updateRanks() {
+        databaseReferenceContestUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    ContestUserRequest contestUserRequest = dataSnapshot1.getValue(ContestUserRequest.class);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void animateImage(ImageView imageView) {

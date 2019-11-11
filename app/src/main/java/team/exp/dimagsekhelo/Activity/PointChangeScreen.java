@@ -132,7 +132,7 @@ public class PointChangeScreen extends AppCompatActivity {
                     }
                 }
 
-                currentMatchAdapter=  new CurrentMatchAdapter(PointChangeScreen.this,currentMatchPoints, Codes.MATCH_TYPE_ODI,textViewPointChangeScreenTextView,databaseReferenceContestUser,firebaseAuth.getCurrentUser());
+                currentMatchAdapter=  new CurrentMatchAdapter(PointChangeScreen.this,currentMatchPoints, Codes.MATCH_TYPE_ODI,textViewPointChangeScreenTextView,databaseReferenceContestUser,firebaseAuth.getCurrentUser(),finalTeamContestRequest.get_CaptainPlayerId(),finalTeamContestRequest.get_ViceCaptainPlayerId());
                 pointSystemList.setAdapter(currentMatchAdapter);
 
               }
@@ -148,11 +148,6 @@ public class PointChangeScreen extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"No Contests Available !!! ", Toast.LENGTH_LONG).show();
             }
         });
-
-
-
-
-
     }
 
 
@@ -177,5 +172,7 @@ public class PointChangeScreen extends AppCompatActivity {
     }
 
 
+    public void goToLeaderboard(View view) {
 
+    }
 }

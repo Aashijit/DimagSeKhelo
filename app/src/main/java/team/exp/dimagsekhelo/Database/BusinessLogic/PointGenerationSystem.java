@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 
 import team.exp.dimagsekhelo.Utils.Codes;
 import team.exp.dimagsekhelo.WebServiceResponseObjects.CurrentMatchPoints;
-import team.exp.dimagsekhelo.WebServiceResponseObjects.WicketsTaken;
 
 public class PointGenerationSystem implements Codes {
 
@@ -14,7 +13,7 @@ public class PointGenerationSystem implements Codes {
      * @param currentMatchPoints
      * @return
      */
-    public Double getPointsForT20(@NonNull CurrentMatchPoints currentMatchPoints){
+    public Double getPointsForT20(@NonNull CurrentMatchPoints currentMatchPoints,String captainPlayerId,String viceCaptainPlayerId){
         //Step 1 : A part of the starting XI
         Double points = 4.0;
 
@@ -25,6 +24,23 @@ public class PointGenerationSystem implements Codes {
         }
 
         //Step 3 : Every wicket taken
+
+        Integer totalWicketsTaken = 0;
+        Integer wicketsCB = Integer.parseInt(currentMatchPoints.get_WicketsCB());
+        Integer wicketsC = Integer.parseInt(currentMatchPoints.get_WicketsC());
+        Integer wicketsB = Integer.parseInt(currentMatchPoints.get_WicketsB());
+        Integer wicketsR = Integer.parseInt(currentMatchPoints.get_WicketsR());
+
+        totalWicketsTaken = wicketsB+wicketsC+wicketsCB+wicketsR;
+
+        points = points + totalWicketsTaken * 30.00;
+
+        points = points + wicketsC * 10.00;
+
+        points = points + wicketsCB * 35.00;
+
+        points = points + wicketsR * 15.00;
+
 //        for(WicketsTaken wicketsTaken : currentMatchPoints.getWicketsTaken()){
 //
 //            points = points + 30.00;
@@ -82,6 +98,21 @@ public class PointGenerationSystem implements Codes {
             if(Double.parseDouble(currentMatchPoints.get_MaidenOvers()) > 0)
                 points += 10.00 * Double.parseDouble(currentMatchPoints.get_MaidenOvers());
         }
+
+
+        if(totalWicketsTaken == 4)
+            points += 10.00;
+        if(totalWicketsTaken == 5)
+            points += 20.00;
+        if(totalWicketsTaken == 2)
+            points += 1.00;
+        if(totalWicketsTaken == 3)
+            points += 1.00;
+
+        if(currentMatchPoints.get_RunsScored() != null)
+            if(totalWicketsTaken == 3 && Double.parseDouble(currentMatchPoints.get_RunsScored()) == 30.00)
+                    points += 20.00;
+
 //
 //        if(currentMatchPoints.getWicketsTaken() != null){
 //
@@ -218,6 +249,13 @@ public class PointGenerationSystem implements Codes {
         if(presentStrikeRate < 40.00)
             points -= 1.00;
 
+
+        if(currentMatchPoints.get_PlayerId().equalsIgnoreCase(captainPlayerId))
+            points = points * 2.00;
+
+        if(currentMatchPoints.get_PlayerId().equalsIgnoreCase(viceCaptainPlayerId))
+            points = points * 1.50;
+
         return points;
     }
 
@@ -227,7 +265,7 @@ public class PointGenerationSystem implements Codes {
      * @param currentMatchPoints
      * @return
      */
-    public Double getPointsForODI(CurrentMatchPoints currentMatchPoints){
+    public Double getPointsForODI(CurrentMatchPoints currentMatchPoints,String captainPlayerId, String viceCaptainPlayerId){
 
         //Step 1 : A part of the starting XI
         Double points = 4.0;
@@ -239,6 +277,21 @@ public class PointGenerationSystem implements Codes {
         }
 
         //Step 3 : Every wicket taken
+        Integer totalWicketsTaken = 0;
+        Integer wicketsCB = Integer.parseInt(currentMatchPoints.get_WicketsCB());
+        Integer wicketsC = Integer.parseInt(currentMatchPoints.get_WicketsC());
+        Integer wicketsB = Integer.parseInt(currentMatchPoints.get_WicketsB());
+        Integer wicketsR = Integer.parseInt(currentMatchPoints.get_WicketsR());
+
+        totalWicketsTaken = wicketsB+wicketsC+wicketsCB+wicketsR;
+
+        points = points + totalWicketsTaken * 30.00;
+
+        points = points + wicketsC * 10.00;
+
+        points = points + wicketsCB * 35.00;
+
+        points = points + wicketsR * 15.00;
 //        for(WicketsTaken wicketsTaken : currentMatchPoints.getWicketsTaken()){
 //
 //            points = points + 30.00;
@@ -296,6 +349,21 @@ public class PointGenerationSystem implements Codes {
             if(Double.parseDouble(currentMatchPoints.get_MaidenOvers()) > 0)
                 points += 6.00 * Double.parseDouble(currentMatchPoints.get_MaidenOvers());
         }
+
+
+        if(totalWicketsTaken == 4)
+            points += 5.00;
+        if(totalWicketsTaken == 5)
+            points += 10.00;
+        if(totalWicketsTaken == 2)
+            points += 1.00;
+        if(totalWicketsTaken == 3)
+            points += 1.00;
+
+        if(currentMatchPoints.get_RunsScored() != null)
+            if(totalWicketsTaken == 4 && Double.parseDouble(currentMatchPoints.get_RunsScored()) == 50.00)
+                points += 25.00;
+
 
 //        if(currentMatchPoints.getWicketsTaken() != null){
 //
@@ -433,6 +501,13 @@ public class PointGenerationSystem implements Codes {
 
         if(presentStrikeRate < 40.00)
             points -= 5.00;
+
+
+        if(currentMatchPoints.get_PlayerId().equalsIgnoreCase(captainPlayerId))
+            points = points * 2.00;
+
+        if(currentMatchPoints.get_PlayerId().equalsIgnoreCase(viceCaptainPlayerId))
+            points = points * 1.50;
 
         return points;
 

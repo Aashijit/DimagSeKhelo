@@ -1,5 +1,7 @@
 package team.exp.dimagsekhelo.Activity;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -20,7 +23,10 @@ import java.util.List;
 
 import team.exp.dimagsekhelo.CustomUIElements.MyTeamAdapter;
 import team.exp.dimagsekhelo.R;
+import team.exp.dimagsekhelo.WebServiceRequestObjects.ContestUserRequest;
 import team.exp.dimagsekhelo.WebServiceRequestObjects.TeamContestRequest;
+import team.exp.dimagsekhelo.WebServiceResponseObjects.ContestMasterResponse;
+import team.exp.dimagsekhelo.WebServiceResponseObjects.MatchStatus;
 
 public class MyTeamActivity extends AppCompatActivity {
 
@@ -29,11 +35,17 @@ public class MyTeamActivity extends AppCompatActivity {
 
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReferenceMyTeams = database.getReference("TeamContest");
+    DatabaseReference databaseReferenceContestUser = database.getReference("ContestUser");
+    DatabaseReference databaseReferenceContestMaster = database.getReference("ContestMaster");
+    DatabaseReference databaseReferenceMatchStatus = database.getReference("MatchStatus");
+
     private List<TeamContestRequest> teamContestRequests;
 
     private MyTeamAdapter myTeamAdapter;
 
     private ListView myTeamList;
+
+    private ProgressDialog progressDialog;
 
 
     @Override
@@ -42,6 +54,10 @@ public class MyTeamActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_team);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        Context context;
+        progressDialog = new ProgressDialog(MyTeamActivity.this);
+
         myTeamList = (ListView) findViewById(R.id.myTeamsList);
 
         fetchTeams();
@@ -70,7 +86,11 @@ public class MyTeamActivity extends AppCompatActivity {
                 myTeamList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                        //check if the match is running or not
+                        //fetch the contest user
+                        progressDialog.show();
+                        progressDialog.setCancelable(false);
+                        checkContestUserByTeamId(teamContestRequests.get(i).get_TeamId());
                     }
                 });
             }
@@ -83,8 +103,87 @@ public class MyTeamActivity extends AppCompatActivity {
         });
     }
 
+    private void checkContestUserByTeamId(final String teamId) {
+        databaseReferenceContestUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    ContestUserRequest contestUserRequest = dataSnapshot1.getValue(ContestUserRequest.class);
+
+                    if(contestUserRequest == null)
+                        continue;
 
 
+                    if(contestUserRequest.get_TeamId().equalsIgnoreCase(teamId)){
+                        checkContestMasterUsingContestId(contestUserRequest.get_ContestId());
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+    }
+
+    private void checkContestMasterUsingContestId(final String contestId) {
+        databaseReferenceContestMaster.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    ContestMasterResponse contestMasterResponse = dataSnapshot1.getValue(ContestMasterResponse.class);
+                    if(contestMasterResponse == null)
+                        continue;
+                    if(contestMasterResponse.get_ContestId().equalsIgnoreCase(contestId)){
+                        //Check match status using match Id
+                        checkMatchStatus(contestMasterResponse.get_MatchId());
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+    }
+
+    private void checkMatchStatus(final String matchId) {
+        databaseReferenceMatchStatus.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+
+                    MatchStatus matchStatus = dataSnapshot1.getValue(MatchStatus.class);
+
+                    if(matchStatus == null)
+                        continue;
+
+                    if(matchStatus.get_MatchId().equalsIgnoreCase(matchId))
+                    {
+                      if(matchStatus.get_MatchStatus().equalsIgnoreCase("Running"))
+                      {
+                          Toast.makeText(getApplicationContext(),"Match is running  !!! Team Edit not possible now !!!!",Toast.LENGTH_SHORT).show();
+                          return;
+                      }
+                      else
+                      {
+                          //Take the user to the team edit screen
+
+                      }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
     public void myTeamGoBack(View view) {
         finish();
     }
