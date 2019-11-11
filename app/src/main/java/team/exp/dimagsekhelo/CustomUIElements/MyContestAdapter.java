@@ -109,13 +109,11 @@ public class MyContestAdapter extends ArrayAdapter<ContestMasterResponse> {
                                 public void onClick(View view) {
 
                                     if(checkUpdateButton.getText().toString().equalsIgnoreCase("Check Update")) {
-
                                         Intent intent = new Intent(context, PointChangeScreen.class);
                                         intent.putExtra(MATCH_ID, contestMasterResponses.get(position).get_MatchId());
                                         intent.putExtra(CONTEST_ID, contestMasterResponses.get(position).get_ContestId());
                                         context.startActivity(intent);
                                     } else if(checkUpdateButton.getText().toString().equalsIgnoreCase("Check Points")){
-
                                         Intent intent = new Intent(context, PointChangeScreen.class);
                                         intent.putExtra(MATCH_ID, contestMasterResponses.get(position).get_MatchId());
                                         intent.putExtra(CONTEST_ID, contestMasterResponses.get(position).get_ContestId());
@@ -168,19 +166,25 @@ public class MyContestAdapter extends ArrayAdapter<ContestMasterResponse> {
 
                                 PlayerResponse playerResponse = getPlayerResponseByPlayerId(teamContestRequestFinal.get_CaptainPlayerId(),playerResponses);
                                 playerResponse.setPlayerCaptain(true);
+                                playerResponse.setPlayerSelected(true);
                                 filteredPlayerResponseList.add(playerResponse);
 
                                 playerResponse = getPlayerResponseByPlayerId(teamContestRequestFinal.get_ViceCaptainPlayerId(),playerResponses);
                                 playerResponse.setPlayerViceCaptain(true);
+                                playerResponse.setPlayerSelected(true);
                                 filteredPlayerResponseList.add(playerResponse);
 
 
 
                                 for(PlayerTeamContest p : teamContestRequestFinal.getPlayers()){
                                     playerResponse = getPlayerResponseByPlayerId(p.get_PlayerId(),playerResponses);
+                                    playerResponse.setPlayerSelected(true);
                                     filteredPlayerResponseList.add(playerResponse);
                                 }
 
+
+                                for(PlayerResponse playerResponse1 : filteredPlayerResponseList)
+                                    Log.d(this.getClass().getName(),"Player Selected : "+playerResponse1.toString());
 
 
                                 //Transfer Control to the Team Preview Screen

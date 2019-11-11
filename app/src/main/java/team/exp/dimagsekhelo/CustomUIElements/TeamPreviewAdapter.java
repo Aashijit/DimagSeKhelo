@@ -34,6 +34,8 @@ public class TeamPreviewAdapter extends ArrayAdapter<PlayerResponse> {
         this.context=context;
         this.playerResponses = playerResponses;
 
+        Log.d(this.getClass().getName(),"Number of players : "+playerResponses.size());
+
         dateUtils = new DateUtils();
     }
 

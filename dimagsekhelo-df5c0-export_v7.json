@@ -1,0 +1,1364 @@
+{
+  "ContestMaster" : {
+    "Contest_001" : {
+      "_ContestId" : "1",
+      "_ContestType" : "Mega",
+      "_EntryFeePoints" : "33",
+      "_MatchId" : "1",
+      "_PrizePool" : "12,000",
+      "_TotalStrength" : "300",
+      "_TotalWinners" : "5000"
+    },
+    "Contest_002" : {
+      "_ContestId" : "2",
+      "_ContestType" : "Beginners",
+      "_EntryFeePoints" : "0",
+      "_MatchId" : "1",
+      "_PrizePool" : "30,000",
+      "_TotalStrength" : "500",
+      "_TotalWinners" : "34,000"
+    },
+    "Contest_003" : {
+      "_ContestId" : "3",
+      "_ContestType" : "Head-to-Head",
+      "_EntryFeePoints" : "37",
+      "_MatchId" : "2",
+      "_PrizePool" : "12,000",
+      "_TotalStrength" : "900",
+      "_TotalWinners" : "12,000"
+    }
+  },
+  "ContestUser" : {
+    "-LsFinGJ4eO2vkDYzqe5" : {
+      "_ContestId" : "1",
+      "_Points" : "1426.0",
+      "_Rank" : "0",
+      "_TeamId" : "1572238734342",
+      "_UserPhoneNumber" : "+918910473248"
+    },
+    "-Lsr3EZ0Wr2P8OCWBPof" : {
+      "_ContestId" : "2",
+      "_ContestJoinTimeStamp" : "Mon Nov 04 21:08:09 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572881888935",
+      "_UserPhoneNumber" : "+917278698473"
+    },
+    "-Lsr3JtZeCSvS6NhFhGn" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Mon Nov 04 21:08:33 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572881912577",
+      "_UserPhoneNumber" : "+917044209610"
+    },
+    "-Lsr3mweqcuR6drtXMrR" : {
+      "_ContestId" : "2",
+      "_ContestJoinTimeStamp" : "Mon Nov 04 21:10:36 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572882035640",
+      "_UserPhoneNumber" : "+917044209610"
+    },
+    "-LsuhupmSdHhDTtIGDBh" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 14:09:05 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572943142113",
+      "_UserPhoneNumber" : "+918436983930"
+    },
+    "-Lsv_JY0VZ-Keue6cjm4" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:11:09 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572957668912",
+      "_UserPhoneNumber" : "+919038438252"
+    },
+    "-Lsv_xxWmjpAvNBzQQcO" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:14:00 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572957837581",
+      "_UserPhoneNumber" : "+919732931653"
+    },
+    "-LsvaBpJIS3h-fhEJsw8" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:14:59 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572957891664",
+      "_UserPhoneNumber" : "+918001576686"
+    },
+    "-LsvactfOcFJTbXe7nlq" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:16:54 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572958011137",
+      "_UserPhoneNumber" : "+919609628855"
+    },
+    "-LsveDG3dOLnpj3epoEk" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:32:42 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572958961825",
+      "_UserPhoneNumber" : "+919874227232"
+    },
+    "-Lsvea9TBMFcQqejNFw_" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:34:12 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572959048669",
+      "_UserPhoneNumber" : "+917029712466"
+    },
+    "-LsvekTobWt94AwVx9A8" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:34:54 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572959094121",
+      "_UserPhoneNumber" : "+919330173367"
+    },
+    "-LsverukTzdxsN5p84-M" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:35:25 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572959118783",
+      "_UserPhoneNumber" : "+917278698473"
+    },
+    "-Lsvf3PuBPvYdM4f0bg8" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:36:16 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572959176019",
+      "_UserPhoneNumber" : "+917278698473"
+    },
+    "-Lsvf5qtpg7WshWUCbzx" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:36:25 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572959154753",
+      "_UserPhoneNumber" : "+918582863415"
+    },
+    "-Lsvf5r2M1Oixnv9pptC" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:36:25 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572959177333",
+      "_UserPhoneNumber" : "+918582863415"
+    },
+    "-LsvfEVnbwqLpetHf3jc" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:37:01 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572959218766",
+      "_UserPhoneNumber" : "+917278698473"
+    },
+    "-LsvfdxtooR_CtXoVFwx" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:38:50 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572959329487",
+      "_UserPhoneNumber" : "+916289925549"
+    },
+    "-LsvfjFBYjv1Ce-qdg_m" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:39:11 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572959351456",
+      "_UserPhoneNumber" : "+918617057630"
+    },
+    "-Lsvh5D9_hXoG7Qdpg0j" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:45:07 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572959706705",
+      "_UserPhoneNumber" : "+919636101929"
+    },
+    "-LsvkQ-fGdY7-orajm-V" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 18:59:40 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572960577745",
+      "_UserPhoneNumber" : "+916295107056"
+    },
+    "-LsvkgKvnWeH5X2s4z5K" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 19:00:50 GMT+05:30 2019",
+      "_Points" : "1426.0",
+      "_Rank" : "0",
+      "_TeamId" : "1572960648260",
+      "_UserPhoneNumber" : "+918961408841"
+    },
+    "-LsvwgekjIEqVA2Lm9qe" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 19:53:17 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572963793510",
+      "_UserPhoneNumber" : "+919647979969"
+    },
+    "-Lsw7Lc0xmMOCKIzYi6Q" : {
+      "_ContestId" : "1",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 20:44:12 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572966851830",
+      "_UserPhoneNumber" : "+917014578218"
+    },
+    "-LswFCy758piipR61War" : {
+      "_ContestId" : "2",
+      "_ContestJoinTimeStamp" : "Tue Nov 05 21:18:35 GMT+05:30 2019",
+      "_Points" : "0",
+      "_Rank" : "0",
+      "_TeamId" : "1572968914113",
+      "_UserPhoneNumber" : "+919609628855"
+    }
+  },
+  "CurrentMatches" : {
+    "01" : {
+      "_BattingStatus" : "Out",
+      "_BoundariesHit" : "50",
+      "_BowledOvers" : "5",
+      "_BowlingStatus" : "Bowling",
+      "_ContestId" : "1",
+      "_MaidenOvers" : "6",
+      "_MatchId" : "1",
+      "_OverBoundariesHit" : "0",
+      "_OversFaced" : "5",
+      "_PlayerId" : "1",
+      "_PlayerName" : "Rohit Shetty",
+      "_PlayerType" : "Batsman",
+      "_RunsGiven" : "10",
+      "_RunsScored" : "300"
+    },
+    "02" : {
+      "_BattingStatus" : "Out",
+      "_BoundariesHit" : "4",
+      "_BowledOvers" : "15",
+      "_BowlingStatus" : "NotBowling",
+      "_ContestId" : "1",
+      "_MaidenOvers" : "1",
+      "_MatchId" : "1",
+      "_OverBoundariesHit" : "7",
+      "_OversFaced" : "0",
+      "_PlayerId" : "2",
+      "_PlayerName" : "K.L Rahul",
+      "_PlayerType" : "Bowler",
+      "_RunsGiven" : "20",
+      "_RunsScored" : "114"
+    },
+    "03" : {
+      "_BattingStatus" : "Batting",
+      "_BoundariesHit" : "0",
+      "_BowledOvers" : "25",
+      "_BowlingStatus" : "NotBowling",
+      "_ContestId" : "1",
+      "_MaidenOvers" : "1",
+      "_MatchId" : "1",
+      "_OverBoundariesHit" : "0",
+      "_OversFaced" : "5",
+      "_PlayerId" : "3",
+      "_PlayerName" : "Ajay Jadeja",
+      "_PlayerType" : "Batsman",
+      "_RunsGiven" : "10",
+      "_RunsScored" : "48"
+    },
+    "04" : {
+      "_BattingStatus" : "Batting",
+      "_BoundariesHit" : "0",
+      "_BowledOvers" : "25",
+      "_BowlingStatus" : "Bowling",
+      "_ContestId" : "1",
+      "_MaidenOvers" : "1",
+      "_MatchId" : "1",
+      "_OverBoundariesHit" : "0",
+      "_OversFaced" : "5",
+      "_PlayerId" : "4",
+      "_PlayerName" : "Ajay Jadeja",
+      "_PlayerType" : "Batsman",
+      "_RunsGiven" : "10",
+      "_RunsScored" : "50"
+    },
+    "05" : {
+      "_BattingStatus" : "Out",
+      "_BoundariesHit" : "0",
+      "_BowledOvers" : "25",
+      "_BowlingStatus" : "Bowling",
+      "_ContestId" : "1",
+      "_MaidenOvers" : "1",
+      "_MatchId" : "1",
+      "_OverBoundariesHit" : "0",
+      "_OversFaced" : "5",
+      "_PlayerId" : "7",
+      "_PlayerName" : "Rahul Yadav",
+      "_PlayerType" : "Batsman",
+      "_RunsGiven" : "10",
+      "_RunsScored" : "48"
+    }
+  },
+  "MatchStatus" : {
+    "Match_001" : {
+      "_MatchId" : "1",
+      "_MatchStatus" : "Running"
+    }
+  },
+  "PlayerMasterContest" : {
+    "Player_001" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.5",
+      "_PlayerId" : "1",
+      "_PlayerName" : "Virat Kohli",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Batsman"
+    },
+    "Player_002" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.0",
+      "_PlayerId" : "2",
+      "_PlayerName" : "Andy Bichel",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Bowler"
+    },
+    "Player_003" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.5",
+      "_PlayerId" : "3",
+      "_PlayerName" : "Sourav Ganguly",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Batsman"
+    },
+    "Player_004" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "8.0",
+      "_PlayerId" : "4",
+      "_PlayerName" : "Glen McGrath",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Bowler"
+    },
+    "Player_005" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "7.5",
+      "_PlayerId" : "5",
+      "_PlayerName" : "Shane Bond",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Bowler"
+    },
+    "Player_006" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "5.5",
+      "_PlayerId" : "6",
+      "_PlayerName" : "Mark Boucher",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "All rounder"
+    },
+    "Player_007" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.0",
+      "_PlayerId" : "7",
+      "_PlayerName" : "Kapil Dev",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "All rounder"
+    },
+    "Player_008" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "8.0",
+      "_PlayerId" : "8",
+      "_PlayerName" : "Sanath Jaisurya",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "All rounder"
+    },
+    "Player_009" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.5",
+      "_PlayerId" : "9",
+      "_PlayerName" : "MS Dhoni",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Batsman"
+    },
+    "Player_010" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "8.5",
+      "_PlayerId" : "10",
+      "_PlayerName" : "Stephen Fleming",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Batsman"
+    },
+    "Player_011" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.5",
+      "_PlayerId" : "11",
+      "_PlayerName" : "Joel Garner",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Bowler"
+    },
+    "Player_013" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.5",
+      "_PlayerId" : "13",
+      "_PlayerName" : "Brett Lee",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Bowler"
+    },
+    "Player_014" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "8.5",
+      "_PlayerId" : "12",
+      "_PlayerName" : "Javagal Srinath",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Bowler"
+    },
+    "Player_015" : {
+      "_MatchId" : "1",
+      "_PlayerCredit" : "9.5",
+      "_PlayerId" : "13",
+      "_PlayerName" : "Parthiv Patel",
+      "_PlayerPictureUrl" : "None",
+      "_PlayerType" : "Allrounder"
+    }
+  },
+  "TeamContest" : {
+    "-LsFin2y6cCtVDT8oGG5" : {
+      "_CaptainPlayerId" : "2",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572238734342",
+      "_TeamName" : "DSK Team 1",
+      "_UserPhoneNumber" : "+918910473248",
+      "_ViceCaptainPlayerId" : "3",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "12"
+      } ]
+    },
+    "-Lsr3ENW72F-L2pPxGnY" : {
+      "_CaptainPlayerId" : "8",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572881888935",
+      "_TeamName" : "Dsk 11",
+      "_UserPhoneNumber" : "+917278698473",
+      "_ViceCaptainPlayerId" : "11",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsr3JmjSf-HXQhIBToN" : {
+      "_CaptainPlayerId" : "1",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572881912577",
+      "_TeamName" : "dipen1",
+      "_UserPhoneNumber" : "+917044209610",
+      "_ViceCaptainPlayerId" : "9",
+      "players" : [ {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsr3mnUhV3BniYaF8SQ" : {
+      "_CaptainPlayerId" : "1",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572882035640",
+      "_TeamName" : "dipen1",
+      "_UserPhoneNumber" : "+917044209610",
+      "_ViceCaptainPlayerId" : "2",
+      "players" : [ {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsuhtqm47hDMbLWGzUR" : {
+      "_CaptainPlayerId" : "1",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572943142113",
+      "_TeamName" : "suvankar ",
+      "_UserPhoneNumber" : "+918436983930",
+      "_ViceCaptainPlayerId" : "6",
+      "players" : [ {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsv_JQN1Aypcv-ZqU28" : {
+      "_CaptainPlayerId" : "",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572957668912",
+      "_TeamName" : "sudip",
+      "_UserPhoneNumber" : "+919038438252",
+      "_ViceCaptainPlayerId" : "",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsv_xHvaW4rFmoyxeyv" : {
+      "_CaptainPlayerId" : "7",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572957837581",
+      "_TeamName" : "arup",
+      "_UserPhoneNumber" : "+919732931653",
+      "_ViceCaptainPlayerId" : "8",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsva9q__tzMyKdNmlo9" : {
+      "_CaptainPlayerId" : "1",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572957891664",
+      "_TeamName" : "BUDHA\n\n",
+      "_UserPhoneNumber" : "+918001576686",
+      "_ViceCaptainPlayerId" : "3",
+      "players" : [ {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsvac3koFcYiisVrSJH" : {
+      "_CaptainPlayerId" : "3",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572958011137",
+      "_TeamName" : "rohan",
+      "_UserPhoneNumber" : "+919609628855",
+      "_ViceCaptainPlayerId" : "9",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-LsveD8HWWmWLFT5-_Fw" : {
+      "_CaptainPlayerId" : "1",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572958961825",
+      "_TeamName" : "ss",
+      "_UserPhoneNumber" : "+919874227232",
+      "_ViceCaptainPlayerId" : "2",
+      "players" : [ {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsve_JEY2lYnQ3A9kNN" : {
+      "_CaptainPlayerId" : "3",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572959048669",
+      "_TeamName" : "rahul",
+      "_UserPhoneNumber" : "+917029712466",
+      "_ViceCaptainPlayerId" : "7",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-LsvekKA-8YAnBbFCirc" : {
+      "_CaptainPlayerId" : "7",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572959094121",
+      "_TeamName" : "dipen2",
+      "_UserPhoneNumber" : "+919330173367",
+      "_ViceCaptainPlayerId" : "13",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-LsveqKkQclQ7QuUAYWd" : {
+      "_CaptainPlayerId" : "8",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572959118783",
+      "_TeamName" : "Dsk11",
+      "_UserPhoneNumber" : "+917278698473",
+      "_ViceCaptainPlayerId" : "9",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-LsvezINNGc1Rk1O7TGQ" : {
+      "_CaptainPlayerId" : "9",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572959154753",
+      "_TeamName" : "suvankar ",
+      "_UserPhoneNumber" : "+918582863415",
+      "_ViceCaptainPlayerId" : "13",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsvf3Iz0X3A3PuG9ArA" : {
+      "_CaptainPlayerId" : "8",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572959176019",
+      "_TeamName" : "Dsk11",
+      "_UserPhoneNumber" : "+917278698473",
+      "_ViceCaptainPlayerId" : "9",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsvf3oBe-ER2peU3y-L" : {
+      "_CaptainPlayerId" : "9",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572959177333",
+      "_TeamName" : "suvankar 2",
+      "_UserPhoneNumber" : "+918582863415",
+      "_ViceCaptainPlayerId" : "13",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-LsvfDjublUsafVl0D9w" : {
+      "_CaptainPlayerId" : "12",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572959218766",
+      "_TeamName" : "Dsk1",
+      "_UserPhoneNumber" : "+917278698473",
+      "_ViceCaptainPlayerId" : "13",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-LsvfdlvvccELZmWH9TT" : {
+      "_CaptainPlayerId" : "6",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572959329487",
+      "_TeamName" : "Soumen 11",
+      "_UserPhoneNumber" : "+916289925549",
+      "_ViceCaptainPlayerId" : "7",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsvfj8fJGYkn-lhPKZo" : {
+      "_CaptainPlayerId" : "9",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572959351456",
+      "_TeamName" : "arijit",
+      "_UserPhoneNumber" : "+918617057630",
+      "_ViceCaptainPlayerId" : "3",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsvh54OGXNrOogCNo0t" : {
+      "_CaptainPlayerId" : "1",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572959706705",
+      "_TeamName" : "Arrijit1",
+      "_UserPhoneNumber" : "+919636101929",
+      "_ViceCaptainPlayerId" : "11",
+      "players" : [ {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-LsvkPRl5XGmahk7fuvQ" : {
+      "_CaptainPlayerId" : "",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572960577745",
+      "_TeamName" : "kousik maity",
+      "_UserPhoneNumber" : "+916295107056",
+      "_ViceCaptainPlayerId" : "",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsvkfj7-tOb_9YpLb-8" : {
+      "_CaptainPlayerId" : "1",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572960648260",
+      "_TeamName" : "pritam ",
+      "_UserPhoneNumber" : "+918961408841",
+      "_ViceCaptainPlayerId" : "4",
+      "players" : [ {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-LsvwfceyVa0w40RmYPb" : {
+      "_CaptainPlayerId" : "",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572963793510",
+      "_TeamName" : "bijuca",
+      "_UserPhoneNumber" : "+919647979969",
+      "_ViceCaptainPlayerId" : "6",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "3"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-Lsw7LWqtDE9t67Zm0by" : {
+      "_CaptainPlayerId" : "3",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572966851830",
+      "_TeamName" : "aq",
+      "_UserPhoneNumber" : "+917014578218",
+      "_ViceCaptainPlayerId" : "6",
+      "players" : [ {
+        "_PlayerId" : "1"
+      }, {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    },
+    "-LswFCg_3CB1KlGNYDeI" : {
+      "_CaptainPlayerId" : "3",
+      "_IsDelete" : "0",
+      "_TeamId" : "1572968914113",
+      "_TeamName" : "rup",
+      "_UserPhoneNumber" : "+919609628855",
+      "_ViceCaptainPlayerId" : "1",
+      "players" : [ {
+        "_PlayerId" : "2"
+      }, {
+        "_PlayerId" : "4"
+      }, {
+        "_PlayerId" : "5"
+      }, {
+        "_PlayerId" : "6"
+      }, {
+        "_PlayerId" : "7"
+      }, {
+        "_PlayerId" : "8"
+      }, {
+        "_PlayerId" : "9"
+      }, {
+        "_PlayerId" : "10"
+      }, {
+        "_PlayerId" : "11"
+      }, {
+        "_PlayerId" : "13"
+      }, {
+        "_PlayerId" : "12"
+      }, {
+        "_PlayerId" : "13"
+      } ]
+    }
+  },
+  "UpcomingMatches" : {
+    "Match_001" : {
+      "_Caption" : "India Vs Australia 3rd ODI",
+      "_Id" : "1",
+      "_IsActive" : "1",
+      "_MatchTime" : "2019-10-10 21:45",
+      "_MatchType" : "ODI",
+      "_TeamName1" : "IND",
+      "_TeamName2" : "AUS"
+    },
+    "Match_002" : {
+      "_Caption" : "Ashes Cup 4th ODI",
+      "_Id" : "2",
+      "_IsActive" : "1",
+      "_MatchTime" : "2019-10-10 21:45",
+      "_MatchType" : "ODI",
+      "_TeamName1" : "BNG",
+      "_TeamName2" : "IND"
+    },
+    "Match_003" : {
+      "_Caption" : "New Zealand Vs Afganisthan 5th ODI",
+      "_Id" : "3",
+      "_IsActive" : "1",
+      "_MatchTime" : "2019-10-12 21:00",
+      "_MatchType" : "T20",
+      "_TeamName1" : "AFG",
+      "_TeamName2" : "NZN"
+    },
+    "Match_004" : {
+      "_Caption" : "India Vs West Indies World Cup",
+      "_Id" : "4",
+      "_IsActive" : "1",
+      "_MatchTime" : "2019-10-20 20:00",
+      "_MatchType" : "T20",
+      "_TeamName1" : "IND",
+      "_TeamName2" : "WIN"
+    },
+    "Match_005" : {
+      "_Caption" : "India First ODI",
+      "_Id" : "5",
+      "_IsActive" : "1",
+      "_MatchTime" : "2019-11-06 14:20",
+      "_MatchType" : "ODI",
+      "_TeamName1" : "IND",
+      "_TeamName2" : "AUS"
+    }
+  },
+  "UserProfile" : {
+    "-LpSwVBjre6LRNdQk_5B" : {
+      "_EmailId" : "aashijitM@gmail.com",
+      "_HashedPassword" : "�\u000E�&Cf�\u000F�v���i1�B����F��\u001D���`g\u0019}�JרiS���NP��#Ԯ8��\u0001�l�\u0017�Q�\u0010�",
+      "_MobileNumber" : "8910473248",
+      "_Salt" : "�.7\u001D\u0005n.��MDɰqɘ"
+    },
+    "-LpssfGk4aiFCvYct3gv" : {
+      "_EmailId" : "dipenmistry1993@gmail.com",
+      "_HashedPassword" : "\u0016\u0016�$���\u0005nv��Nl662��<�s�]���\u0012\u000B\u0010ܚ/�=>ڥB0�Jo)*ʟ\u000B\r��DnC��:��T",
+      "_MobileNumber" : "7044209610",
+      "_Salt" : "B�HX\u001D�@�Y���\u0019+ga"
+    },
+    "-LspPKPCmxu_t4YxP8rs" : {
+      "_EmailId" : "suvojitroy0208@gmail.com",
+      "_HashedPassword" : "\u0010��FH�ݣ��\u0012�m�\u0006\u001F�� 5�8�2���W�vN9\u000EY��a����\u0001�)J륊�\u001C�2{�g��Z��",
+      "_MobileNumber" : "7449836693",
+      "_Salt" : "�����P�@+���\u0002z�"
+    },
+    "-LsqxaxMfcS-tHOrKfE_" : {
+      "_EmailId" : "bpmfoto@gmail.com",
+      "_HashedPassword" : "�#Jb��\f��D1��mW\u001DAF�P��>�Wm�O�G��\u0003SJ\u001B� ��\fe�\u0010��\u0012\n�\\���-�xq\u001D@��",
+      "_MobileNumber" : "9830757244",
+      "_Salt" : "���\t\u0006�\u0013�:��w��8�"
+    },
+    "-Lsv_bO5dt0J6AswI0k0" : {
+      "_EmailId" : "dasmahapatraarup@gmail.com",
+      "_HashedPassword" : "�\u0004Lg�@)G��&�K�[�\u0005j}�����ӧ�\u0014<� �[�ߡ� \u0003�L>�g�\fp����+)�\u0018ԤG~nUyO",
+      "_MobileNumber" : "9732931653",
+      "_Salt" : "�$\u0005>\u001F�\u0000��?�D�]&"
+    },
+    "-LsvfR4B3FRMMPyUY1wB" : {
+      "_EmailId" : "ajana622@gmail.com",
+      "_HashedPassword" : "}���L6|2K�#�l'\b��\u0019��%9��{���o�\u001D3�G̉�p\u0007�U��Y6��\u000FM[6��;�\u0011\u0002H\u000F��ǻ",
+      "_MobileNumber" : "9636101929",
+      "_Salt" : "�-�\u0005B��\u0013~�VW��\\e"
+    },
+    "-Lsvv_hFtO04RDkohuyi" : {
+      "_EmailId" : "dakdas9@gmail.com",
+      "_HashedPassword" : "\\_1:�\u0001���\u0015u�\n�\n�wc�\u0015����}b\\V�,�w��vᇬ�\"�d\u001D�p�\u000EMT�'�H?4��G��",
+      "_MobileNumber" : "9647979969",
+      "_Salt" : "0%[��\u0011\u0019ڠ�F�U4��"
+    },
+    "-Lsw7ZVBR0xoF8evMImQ" : {
+      "_EmailId" : "idas39949@gmail.com",
+      "_HashedPassword" : "�\t_� x<_�c�G��F<�%?�:k�\u0019I���a6�\"}�f\\+Mr\f��Yq)v�ɿ�D%8h\u0004���\u00018�ѫ",
+      "_MobileNumber" : "7797442326",
+      "_Salt" : "��#��IE�\u0006�E\u0002�qJ;"
+    }
+  }
+}

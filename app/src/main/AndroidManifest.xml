@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.PointChangeScreen"></activity>
+        <activity android:name=".Activity.RedeemPointsScreen"></activity>
+        <activity android:name=".Activity.MyTeamActivity" />
+        <activity android:name=".Activity.PointChangeScreen" />
         <activity android:name=".Activity.UserContestsScreen" />
         <activity android:name=".Activity.TeamPreviewScreen" />
         <activity android:name=".Activity.CaptainSelectionScreen" />

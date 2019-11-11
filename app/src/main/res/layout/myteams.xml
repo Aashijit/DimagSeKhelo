@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/vlightgrey"
+    android:orientation="horizontal"
+    android:weightSum="50"
+    android:layout_marginLeft="10sp"
+    android:layout_marginTop="10dp"
+    android:elevation="2dp"
+    android:gravity="center_vertical"
+    android:layout_marginRight="10sp">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/matchCaption"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="IND Vs AUS 1st ODI"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"
+        android:textColor="@color/blue"
+        android:layout_weight="43"
+        android:textSize="15dp"
+        style="@style/TextAppearance.AppCompat.Headline"
+        />
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/editTeam"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="7"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        app:srcCompat="@drawable/edit"
+        />
+</LinearLayout>

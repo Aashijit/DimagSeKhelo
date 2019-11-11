@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/vlightgrey"
+    android:orientation="horizontal"
+    android:weightSum="20"
+    android:layout_marginLeft="10sp"
+    android:layout_marginTop="10dp"
+    android:elevation="2dp"
+    android:gravity="center_vertical"
+    android:layout_marginRight="10sp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/person"
+        android:layout_weight="2"
+        />
+         <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/matchHistoryCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+91891047248"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:textColor="@color/blue"
+                android:textSize="15dp"
+                android:layout_weight="10"
+                style="@style/TextAppearance.AppCompat.Headline"
+                />
+
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="41"-->
+<!--        android:orientation="vertical"-->
+<!--        >-->
+<!--        <android.support.v7.widget.AppCompatTextView-->
+<!--            android:id="@+id/matchHistoryCaption"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="IND Vs AUS 1st ODI"-->
+<!--            android:textStyle="bold"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:textColor="@color/blue"-->
+<!--            android:textSize="15dp"-->
+<!--            style="@style/TextAppearance.AppCompat.Headline"-->
+<!--            />-->
+
+<!--        <android.support.v7.widget.AppCompatTextView-->
+<!--            android:id="@+id/matchHistoryDateTime"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="3rd August, 2019 12:11"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:textColor="#454545"-->
+<!--            style="@style/TextAppearance.AppCompat.Caption"-->
+<!--            />-->
+<!--    </LinearLayout>-->
+<!--    <android.support.v7.widget.AppCompatTextView-->
+<!--        android:id="@+id/contestHistory"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Head-to-Head"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:layout_weight="3"-->
+<!--        android:textSize="12dp"-->
+<!--        style="@style/TextAppearance.AppCompat.Headline"-->
+<!--        />-->
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/points"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:gravity="right"
+        android:text="30000"
+        android:textColor="@color/red"
+        android:textSize="12dp"
+         />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/ranks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1700"
+        android:gravity="right"
+        android:textColor="@color/red"
+        android:layout_weight="4"
+        android:textSize="12dp"
+        style="@style/TextAppearance.AppCompat.Headline"
+        />
+    <!--    <android.support.v7.widget.AppCompatImageButton-->
+    <!--        android:id="@+id/editTeam"-->
+    <!--        android:layout_width="25dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:gravity="center"-->
+    <!--        android:layout_weight="5"-->
+    <!--        style="@style/Widget.AppCompat.Button.Borderless.Colored"-->
+    <!--        app:srcCompat="@drawable/edit"-->
+    <!--    />-->
+</LinearLayout>

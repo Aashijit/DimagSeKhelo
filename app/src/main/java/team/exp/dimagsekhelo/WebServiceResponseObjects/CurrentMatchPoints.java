@@ -1,6 +1,5 @@
 package team.exp.dimagsekhelo.WebServiceResponseObjects;
 
-import java.util.List;
 
 public class CurrentMatchPoints {
 
@@ -18,6 +17,7 @@ public class CurrentMatchPoints {
     private String _BowledOvers;
     private String _RunsGiven;
     private String _BowlingStatus;
+    private Double points;
 
 
     public String get_ContestId() {
@@ -82,6 +82,14 @@ public class CurrentMatchPoints {
 
     public void set_OverBoundariesHit(String _OverBoundariesHit) {
         this._OverBoundariesHit = _OverBoundariesHit;
+    }
+
+    public Double getPoints() {
+        return points;
+    }
+
+    public void setPoints(Double points) {
+        this.points = points;
     }
 
     public String get_OversFaced() {
@@ -157,6 +165,7 @@ public class CurrentMatchPoints {
                 ", _BowledOvers='" + _BowledOvers + '\'' +
                 ", _RunsGiven='" + _RunsGiven + '\'' +
                 ", _BowlingStatus='" + _BowlingStatus + '\'' +
+                ", points=" + points +
                 '}';
     }
 }

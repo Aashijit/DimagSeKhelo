@@ -61,7 +61,6 @@
                 android:layout_height="45dp"
                 android:layout_weight="10"
                 android:background="@drawable/ic_person_black_70dp"
-                app:srcCompat="@drawable/ic_mode_edit_white_24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.144"
@@ -70,20 +69,17 @@
                 app:layout_constraintVertical_bias="0.0" />
 
 
-
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/myProfileUserName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="AASHIJ34PQ"
-                android:layout_weight="60"
-                android:paddingLeft="30px"
-                style="@style/TextAppearance.AppCompat.Headline"
-                android:textSize="18dp"
-                android:textColor="@color/white"
-                android:drawablePadding="20px"
-                android:drawableRight="@drawable/ic_mode_edit_white_24dp"
-                />
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/myProfileUserName"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:drawablePadding="20px"
+                    android:paddingLeft="30px"
+                    android:text="+918910473248"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
 
 
             <android.support.v7.widget.AppCompatImageButton
@@ -92,9 +88,9 @@
                 android:layout_weight="10"
                 app:srcCompat="@drawable/ic_share_white_24dp"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:onClick="shareApp"
                 />
             </LinearLayout>
-
 
 <!--        <LinearLayout-->
 <!--            android:layout_width="match_parent"-->
@@ -162,6 +158,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_weight="92"
+            android:weightSum="10"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -175,7 +172,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:elevation="10dp"
                 android:orientation="vertical"
                 android:weightSum="3"
                 >
@@ -190,106 +186,126 @@
                     android:text="Playing History" />
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
-                    android:background="@drawable/bottomborder"
-                    android:weightSum="2">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:paddingTop="20dp"-->
+<!--                    android:paddingBottom="20dp"-->
+<!--                    android:background="@drawable/bottomborder"-->
+<!--                    android:weightSum="2">-->
 
-                    <android.support.v7.widget.AppCompatTextView
-                        android:id="@+id/myProfileContests"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:drawableTop="@drawable/contest"
-                        android:text="15\nContests"
-                        android:drawablePadding="5dp"
-                        android:background="@drawable/rightborder"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/lightblue"
-                        android:layout_weight="1"
-                        />
+<!--                    <android.support.v7.widget.AppCompatTextView-->
+<!--                        android:id="@+id/myProfileContests"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:drawableTop="@drawable/contest"-->
+<!--                        android:text="15\nContests"-->
+<!--                        android:drawablePadding="5dp"-->
+<!--                        android:background="@drawable/rightborder"-->
+<!--                        android:gravity="center"-->
+<!--                        android:textStyle="bold"-->
+<!--                        style="@style/TextAppearance.AppCompat.Caption"-->
+<!--                        android:textColor="@color/lightblue"-->
+<!--                        android:layout_weight="1"-->
+<!--                        />-->
 
 
-                    <android.support.v7.widget.AppCompatTextView
-                        android:id="@+id/myProfileMatches"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:drawableTop="@drawable/matches"
-                        android:text="10\nMatches"
-                        android:drawablePadding="5dp"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/lightblue"
-                        android:layout_weight="1"
-                        />
+<!--                    <android.support.v7.widget.AppCompatTextView-->
+<!--                        android:id="@+id/myProfileMatches"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:drawableTop="@drawable/matches"-->
+<!--                        android:text="10\nMatches"-->
+<!--                        android:drawablePadding="5dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:textStyle="bold"-->
+<!--                        style="@style/TextAppearance.AppCompat.Caption"-->
+<!--                        android:textColor="@color/lightblue"-->
+<!--                        android:layout_weight="1"-->
+<!--                        />-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
             </LinearLayout>
 
+            <ListView
+                android:id="@+id/listContestHistory"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+            />
 
-
-            <LinearLayout
+            <ProgressBar
+                android:id="@+id/myProfileScreenProgressBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:elevation="10dp"
-                android:orientation="vertical"
-                android:weightSum="3"
-                >
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/myProfileScreenText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No History Present"
+                android:gravity="center"
+                android:visibility="gone"
+                />
 
 
-                <android.support.v7.widget.AppCompatTextView
-                    style="@style/TextAppearance.AppCompat.Headline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:background="@drawable/bottomborder"
-                    android:text="Point Balance" />
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:weightSum="3"-->
+<!--                >-->
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
-                    android:gravity="center_vertical"
-                    android:background="@drawable/bottomborder"
-                    android:weightSum="10">
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:id="@+id/myProfilePointBalance"
-                        android:layout_width="0dip"
-                        android:layout_height="wrap_content"
-                        android:text="134.46 ~ Rs 123.45"
-                        android:gravity="center"
-                        style="@style/TextAppearance.AppCompat.Headline"
-                        android:textColor="@color/lightgrey"
-                        android:layout_weight="7"
-                        />
+<!--                <android.support.v7.widget.AppCompatTextView-->
+<!--                    style="@style/TextAppearance.AppCompat.Headline"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:background="@drawable/bottomborder"-->
+<!--                    android:text="Point Balance" />-->
 
 
-                    <android.support.v7.widget.AppCompatButton
-                        android:onClick="addPointBalance"
-                        android:layout_width="0dip"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="5dp"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:text="Add"
-                        android:drawableRight="@drawable/ic_add_box_orange_24dp"
-                        style="@style/Widget.AppCompat.Button.Colored"
-                        android:layout_weight="3"
-                        />
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:paddingTop="20dp"-->
+<!--                    android:paddingBottom="20dp"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:background="@drawable/bottomborder"-->
+<!--                    android:weightSum="10">-->
 
-                </LinearLayout>
-            </LinearLayout>
+<!--                    <android.support.v7.widget.AppCompatTextView-->
+<!--                        android:id="@+id/myProfilePointBalance"-->
+<!--                        android:layout_width="0dip"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="134.46 ~ Rs 123.45"-->
+<!--                        android:gravity="center"-->
+<!--                        style="@style/TextAppearance.AppCompat.Headline"-->
+<!--                        android:textColor="@color/lightgrey"-->
+<!--                        android:layout_weight="7"-->
+<!--                        />-->
+
+
+<!--                    <android.support.v7.widget.AppCompatButton-->
+<!--                        android:onClick="addPointBalance"-->
+<!--                        android:layout_width="0dip"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:drawablePadding="5dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:text="Add"-->
+<!--                        android:drawableRight="@drawable/ic_add_box_orange_24dp"-->
+<!--                        style="@style/Widget.AppCompat.Button.Colored"-->
+<!--                        android:layout_weight="3"-->
+<!--                        />-->
+
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
 
             <android.support.v7.widget.AppCompatButton
                 android:background="@drawable/allsideborder"

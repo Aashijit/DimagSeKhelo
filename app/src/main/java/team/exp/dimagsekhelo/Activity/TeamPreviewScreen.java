@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -44,6 +45,8 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
     private DatabaseReference databaseReferenceTeamContest;
     private DatabaseReference databaseReferenceContestUser;
 
+    private EditText editTextTeamName;
+
     private String contestId;
     private String amount;
 
@@ -54,6 +57,7 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
 
         teamPreviewList = (ListView) findViewById(R.id.teamPreviewList);
         joinContestButton = (Button) findViewById(R.id.joinContestButton);
+        editTextTeamName = (EditText)findViewById(R.id.teamName);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -63,6 +67,7 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
         if(getIntent().getStringExtra("OnlyView") != null)
         {
             joinContestButton.setVisibility(View.GONE);
+            editTextTeamName.setVisibility(View.GONE);
         }
 
 
@@ -102,11 +107,17 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
 
     public void joinContest(View view) {
 
-
-
+        view.setEnabled(false);
         //Step 1 : Insert a row in the team contest json
         String captainPlayerId ="";
         String viceCaptainPlayerId ="";
+
+        if(editTextTeamName.getText() == null || editTextTeamName.getText().toString().trim().length() == 0)
+        {
+            Toast.makeText(getApplicationContext(),"Team Name is mandatory !!!!",Toast.LENGTH_LONG).show();
+            return;
+        }
+
         List<PlayerTeamContest> playerTeamContests = new ArrayList<>();
         for(PlayerResponse playerResponse : playerResponseList){
             PlayerTeamContest playerTeamContest  = new PlayerTeamContest();
@@ -130,7 +141,7 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
         teamContestRequest.set_ViceCaptainPlayerId(viceCaptainPlayerId);
         teamContestRequest.set_UserPhoneNumber(firebaseAuth.getCurrentUser().getPhoneNumber());
         teamContestRequest.setPlayers(playerTeamContests);
-        teamContestRequest.set_TeamName("DSK Team");
+        teamContestRequest.set_TeamName(editTextTeamName.getText().toString());
 
         String pushId = databaseReferenceTeamContest.push().getKey();
 
@@ -150,6 +161,9 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
                     contestUserRequest.set_ContestId(contestId);
                     contestUserRequest.set_TeamId(teamId);
                     contestUserRequest.set_UserPhoneNumber(firebaseAuth.getCurrentUser().getPhoneNumber());
+                    contestUserRequest.set_ContestJoinTimeStamp(new Date().toString());
+                    contestUserRequest.set_Points("0");
+                    contestUserRequest.set_Rank("0");
                     Log.v(this.getClass().getSimpleName(),"Saving contest : "+contestUserRequest.toString());
                     addContest(contestUserRequest);
                 }
@@ -160,9 +174,6 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
                 }
             }
         });
-
-
-
     }
 
 
@@ -189,6 +200,7 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
                         startActivity(intent);
                     }
                     else {
+                        Toast.makeText(getApplicationContext(),"Contest Joined",Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(TeamPreviewScreen.this, HomeScreen.class);
                         startActivity(intent);
                     }

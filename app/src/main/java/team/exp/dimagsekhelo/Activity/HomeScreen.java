@@ -100,10 +100,12 @@ public class HomeScreen extends AppCompatActivity implements Codes {
                         continue;
 
                     if(contestUserRequest.get_UserPhoneNumber().equalsIgnoreCase(userPhoneNumber))
+                    {
                         contestUserRequests.add(contestUserRequest);
+                        viewContests.setEnabled(true);
+                    }
 
                 }
-                viewContests.setEnabled(true);
 
                     if(contestUserRequests.size() > 0) {
                         makeToast(viewContests, "Joined " + contestUserRequests.size() + " Contests");
@@ -130,12 +132,25 @@ public class HomeScreen extends AppCompatActivity implements Codes {
                         continue;
 
                     if(teamContestRequest.get_UserPhoneNumber().equalsIgnoreCase(userPhoneNumber))
+                    {
                         teamContestRequests.add(teamContestRequest);
+                        viewTeams.setEnabled(true);
+                    }
 
                 }
-                viewTeams.setEnabled(true);
+
                 if(teamContestRequests.size() > 0)
                     makeToast(viewTeams,"Created "+teamContestRequests.size()+" Teams");
+
+
+                viewTeams.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(HomeScreen.this,MyTeamActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
             }
 
             @Override

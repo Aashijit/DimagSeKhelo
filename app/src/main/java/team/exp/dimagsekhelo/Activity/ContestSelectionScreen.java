@@ -111,7 +111,7 @@ public class ContestSelectionScreen extends AppCompatActivity implements Codes {
                                 if(contestUserRequest == null)
                                     return;
                                 for(ContestMasterResponse contestMasterResponse : contestMasterResponses) {
-                                    if (contestUserRequest.get_ContestId().equalsIgnoreCase(contestMasterResponse.get_ContestId()))
+                                    if (contestUserRequest.get_ContestId().equalsIgnoreCase(contestMasterResponse.get_ContestId()) && contestUserRequest.get_UserPhoneNumber().equalsIgnoreCase(firebaseAuth.getCurrentUser().getPhoneNumber()))
                                         joinedContests.add(contestUserRequest.get_ContestId());
                                 }
                             }

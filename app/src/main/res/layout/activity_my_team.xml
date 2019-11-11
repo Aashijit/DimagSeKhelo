@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:weightSum="100"
-    tools:context=".Activity.TeamPreviewScreen">
-
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.MyTeamActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,13 +26,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_arrow_back_black_24dp"
-            android:onClick="teamPreviewGoBack"
+            android:onClick="myTeamGoBack"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Team Preview"
+            android:text="My Teams"
             android:layout_weight="98"
             android:textColor="@color/white"
             android:layout_marginLeft="10dp"
@@ -51,34 +50,11 @@
 
     </LinearLayout>
 
-    <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/teamName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_weight="1"
-        android:hint="Enter Team Name (Mandatory)"
-        />
-
     <ListView
-        android:id="@+id/teamPreviewList"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="94"
-        />
-
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/joinContestButton"
+        android:id="@+id/myTeamsList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="4"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:text="Join Contest"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:onClick="joinContest"
+        android:layout_weight="99"
         />
-
 
 </LinearLayout>
