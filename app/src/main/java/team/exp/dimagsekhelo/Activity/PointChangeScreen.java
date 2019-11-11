@@ -43,6 +43,7 @@ public class PointChangeScreen extends AppCompatActivity {
     DatabaseReference databaseReferenceContestUser = database.getReference("ContestUser");
     DatabaseReference databaseReferenceTeamContest = database.getReference("TeamContest");
 
+
     private CurrentMatchAdapter currentMatchAdapter;
 
     private TextView textViewPointChangeScreenTextView;

@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import team.exp.dimagsekhelo.Database.BusinessLogic.PointGenerationSystem;
@@ -44,6 +45,7 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
     private String captainId, viceCaptainId;
 
     private List<ContestUserRequest> contestUserRequests;
+    private String contestId;
 
     public CurrentMatchAdapter(Activity context, List<CurrentMatchPoints> currentMatchPointsList,String matchType, TextView textView, DatabaseReference databaseReferenceContestUser, FirebaseUser firebaseUser, String captainId,String viceCaptainId) {
         super(context, R.layout.point, currentMatchPointsList);
@@ -56,6 +58,7 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
         this.firebaseUser = firebaseUser;
         this.captainId = captainId;
         this.viceCaptainId = viceCaptainId;
+        contestUserRequests = new ArrayList<ContestUserRequest>();
     }
 
 
@@ -122,6 +125,8 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
 
         textView.setText("Total Points Earned : "+totalPoints+"");
 
+        contestId = currentMatchPoints.get_ContestId();
+
 
         //Update the total Points
         //Fetch all the Contest Users and also calculate the rank
@@ -173,7 +178,14 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
                 for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
                     ContestUserRequest contestUserRequest = dataSnapshot1.getValue(ContestUserRequest.class);
 
+                    if(contestUserRequest == null)
+                        continue;
+
+                    if(contestUserRequest.get_ContestId().equalsIgnoreCase(contestId))
+                        contestUserRequests.add(contestUserRequest);
                 }
+                //Update the ranks
+                
             }
 
             @Override
