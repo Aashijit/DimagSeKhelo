@@ -21,7 +21,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import team.exp.dimagsekhelo.Database.BusinessLogic.PointGenerationSystem;
@@ -172,33 +175,75 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
     }
 
     private void updateRanks() {
-        databaseReferenceContestUser.addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReferenceContestUser.addListenerForSingleValueEvent(new ValueEventListener(){
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot){
                 for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
                     ContestUserRequest contestUserRequest = dataSnapshot1.getValue(ContestUserRequest.class);
 
                     if(contestUserRequest == null)
                         continue;
 
-                    if(contestUserRequest.get_ContestId().equalsIgnoreCase(contestId))
+                    if(contestUserRequest.get_ContestId().equalsIgnoreCase(contestId) && contestUserRequest.get_Points().equalsIgnoreCase("0"))
                         contestUserRequests.add(contestUserRequest);
                 }
                 //Update the ranks
-                
+                changeRanks(contestUserRequests);
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
+            public void onCancelled(@NonNull DatabaseError databaseError){
+                Toast.makeText(context,"Error occurred !!!",Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    public void animateImage(ImageView imageView) {
-        Animation animation1 =
-                AnimationUtils.loadAnimation(context,
-                        R.anim.blink);
+    /**
+     *
+     * @param contestUserRequests
+     */
+    private void changeRanks(@NonNull List<ContestUserRequest> contestUserRequests){
+        Collections.sort(contestUserRequests, new Comparator<ContestUserRequest>(){
+            @Override
+            public int compare(ContestUserRequest o1, ContestUserRequest o2) {
+
+                double crit1,crit2;
+
+                double cur1 = Double.parseDouble(o1.get_Points());
+                double cur2 = Double.parseDouble(o2.get_Points());
+
+                crit1 = cur1;
+                crit2 = cur2;
+
+                String timestamp1= o1.get_ContestJoinTimeStamp();
+                String timestamp2= o2.get_ContestJoinTimeStamp();
+
+                Timestamp tst1 = Timestamp.valueOf(timestamp1);
+                Timestamp tst2 = Timestamp.valueOf(timestamp2);
+
+                if(cur1 == cur2){
+                    crit1 = tst1.getTime();
+                    crit2 = tst2.getTime();
+                }
+
+                return (int)(crit1 - crit2);
+            }
+        });
+
+        //Add the ranks to each and every Player with Score more than 0
+        int rnk=1;
+        for(ContestUserRequest contestUserRequest  : contestUserRequests){
+            contestUserRequest.set_Rank(rnk+"");
+            rnk++;
+        }
+
+
+        //Update the ranks
+
+    }
+
+    public void animateImage(@NonNull ImageView imageView) {
+        Animation animation1 = AnimationUtils.loadAnimation(context, R.anim.blink);
         imageView.startAnimation(animation1);
     }
 }
