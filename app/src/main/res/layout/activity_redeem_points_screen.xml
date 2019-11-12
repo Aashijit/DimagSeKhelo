@@ -1,9 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="100"
     tools:context=".Activity.RedeemPointsScreen">
 
-</android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.000"
+        tools:layout_editor_absoluteX="0dp">
+
+        <android.support.v7.widget.AppCompatImageButton
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+            android:onClick="redeemPointsGoback"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Redeem Points"
+            android:layout_weight="98"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+        <android.support.v7.widget.AppCompatImageButton
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_attach_money_white_24dp"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/matchCaptionContesType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:text="India Vs Bangladesh 1st ODI : Head-to-Head"
+        />
+
+
+    <TextView
+        android:id="@+id/matchScoreAndRank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:text="Match Score : 34000 Rank : 243"
+        />
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/accountHolderName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Account Holder"
+        />
+
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/bankAccountNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Bank Account Number"
+        />
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/bankIfscCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Bank IFSC Code"
+        />
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:text="Request For Points Redeem "
+        android:layout_margin="10dp"
+        android:onClick="redeemPoints"
+        />
+
+
+
+
+</LinearLayout>

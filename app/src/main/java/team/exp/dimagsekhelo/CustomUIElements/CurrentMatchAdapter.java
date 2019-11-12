@@ -3,6 +3,7 @@ package team.exp.dimagsekhelo.CustomUIElements;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -240,7 +241,46 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
 
 
         //Update the ranks
+        for(final ContestUserRequest cuR : contestUserRequests){
+            databaseReferenceContestUser.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                        ContestUserRequest contestUserRequest = dataSnapshot1.getValue(ContestUserRequest.class);
 
+                        if(contestUserRequest == null)
+                            continue;
+
+                        if(contestUserRequest.get_UserPhoneNumber().equalsIgnoreCase(firebaseUser.getPhoneNumber()) && contestUserRequest.get_ContestId().equalsIgnoreCase(cuR.get_ContestId())){
+                            String key = dataSnapshot1.getKey();
+
+                            if(key == null)
+                                continue;
+                            //Update the field now
+                            databaseReferenceContestUser.child(key).child("_Rank").setValue(cuR.get_Rank()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+
+                                    if(task.isSuccessful()){
+                                        Log.d(this.getClass().getName(),"Rank updated !!!");
+//                                        Toast.makeText(context,"Rank updated !!!",Toast.LENGTH_SHORT).show();
+                                        //update the ranks by fetching all the contest user records
+//                                        updateRanks();
+                                    }
+                                }
+                            });
+                        }
+                    }
+
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Toast.makeText(context,"Ranks not updated !!!",Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     public void animateImage(@NonNull ImageView imageView) {

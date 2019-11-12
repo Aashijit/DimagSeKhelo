@@ -197,6 +197,7 @@ public class TeamPreviewScreen extends AppCompatActivity  implements Codes {
                     if(amount != null) {
                         Intent intent = new Intent(TeamPreviewScreen.this, PaymentScreen.class);
                         intent.putExtra("amount",amount);
+                        intent.putExtra(CONTEST_ID,contestId);
                         startActivity(intent);
                     }
                     else {
