@@ -186,11 +186,12 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
                 }
                 //Update the ranks
                 
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Toast.makeText(context,"Error occurred !!!!",Toast.LENGTH_LONG).show();
             }
         });
     }
