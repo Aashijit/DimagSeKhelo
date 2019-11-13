@@ -2,6 +2,7 @@ package team.exp.dimagsekhelo.Activity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +29,10 @@ import team.exp.dimagsekhelo.WebServiceRequestObjects.TeamContestRequest;
 import team.exp.dimagsekhelo.WebServiceResponseObjects.ContestMasterResponse;
 import team.exp.dimagsekhelo.WebServiceResponseObjects.MatchStatus;
 
+import static team.exp.dimagsekhelo.Utils.Codes.CONTEST_ID;
+import static team.exp.dimagsekhelo.Utils.Codes.MATCH_ID;
+import static team.exp.dimagsekhelo.Utils.Codes.TEAM_ID;
+
 public class MyTeamActivity extends AppCompatActivity {
 
 
@@ -47,6 +52,10 @@ public class MyTeamActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
 
+    private String glContestId;
+    private String glTeamId;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +70,20 @@ public class MyTeamActivity extends AppCompatActivity {
         myTeamList = (ListView) findViewById(R.id.myTeamsList);
 
         fetchTeams();
+
+
+        myTeamList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //check if the match is running or not
+                //fetch the contest user
+
+                Toast.makeText(getApplicationContext(),"Entered  !!!!",Toast.LENGTH_LONG).show();
+                progressDialog.show();
+                progressDialog.setCancelable(false);
+                checkContestUserByTeamId(teamContestRequests.get(i).get_TeamId());
+            }
+        });
 
     }
 
@@ -83,16 +106,7 @@ public class MyTeamActivity extends AppCompatActivity {
                 myTeamList.setAdapter(myTeamAdapter);
 
 
-                myTeamList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        //check if the match is running or not
-                        //fetch the contest user
-                        progressDialog.show();
-                        progressDialog.setCancelable(false);
-                        checkContestUserByTeamId(teamContestRequests.get(i).get_TeamId());
-                    }
-                });
+
             }
 
             @Override
@@ -104,6 +118,7 @@ public class MyTeamActivity extends AppCompatActivity {
     }
 
     private void checkContestUserByTeamId(final String teamId) {
+        glTeamId = teamId;
         databaseReferenceContestUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -127,6 +142,7 @@ public class MyTeamActivity extends AppCompatActivity {
     }
 
     private void checkContestMasterUsingContestId(final String contestId) {
+        glContestId = contestId;
         databaseReferenceContestMaster.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -172,7 +188,11 @@ public class MyTeamActivity extends AppCompatActivity {
                       else
                       {
                           //Take the user to the team edit screen
-
+                          Intent intent = new Intent(MyTeamActivity.this,TeamEditScreen.class);
+                          intent.putExtra(CONTEST_ID,glContestId);
+                          intent.putExtra(TEAM_ID,glTeamId);
+                          intent.putExtra(MATCH_ID,matchId);
+                          startActivity(intent);
                       }
                     }
                 }

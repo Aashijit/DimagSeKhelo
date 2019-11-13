@@ -53,7 +53,7 @@
 
 
     <TextView
-        android:id="@+id/matchCaptionContesType"
+        android:id="@+id/matchCaptionContestType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -80,9 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Account Holder"
-        />
-
-
+    />
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/bankAccountNumber"
@@ -90,8 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Bank Account Number"
-        />
-
+    />
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/bankIfscCode"
@@ -99,8 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Bank IFSC Code"
-        />
-
+    />
 
     <android.support.v7.widget.AppCompatButton
         android:layout_width="match_parent"
@@ -109,9 +105,6 @@
         android:text="Request For Points Redeem "
         android:layout_margin="10dp"
         android:onClick="redeemPoints"
-        />
-
-
-
+    />
 
 </LinearLayout>

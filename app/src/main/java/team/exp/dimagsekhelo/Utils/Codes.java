@@ -17,6 +17,8 @@ public interface Codes {
     public static String CONTEST_ID="ContestId";
     public static String TEAM="Team";
 
+    public static String TEAM_ID="TeamId";
+
 
     public static String CONTESTS="Contests";
     public static String TEAMS="Teams";

@@ -99,6 +99,7 @@
             android:layout_weight="25"
             android:drawableTop="@drawable/ic_library_books_white_24dp"
             android:text="Rules"
+            android:onClick="goToRulesPage"
             android:textColor="@color/white" />
     </LinearLayout>
 

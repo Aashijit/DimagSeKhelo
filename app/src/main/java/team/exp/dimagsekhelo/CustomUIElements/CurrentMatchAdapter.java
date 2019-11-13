@@ -26,6 +26,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import team.exp.dimagsekhelo.Database.BusinessLogic.PointGenerationSystem;
@@ -88,6 +89,13 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
             playerType.setImageResource(R.drawable.bowler);
         else if(currentMatchPoints.get_PlayerType().equalsIgnoreCase(ALL_ROUNDER))
             playerType.setImageResource(R.drawable.allrounder);
+
+        Double totalWickets = Double.parseDouble(currentMatchPoints.get_WicketsB()) +
+                Double.parseDouble(currentMatchPoints.get_WicketsC())+
+        Double.parseDouble(currentMatchPoints.get_WicketsCB())+
+        Double.parseDouble(currentMatchPoints.get_WicketsR());
+
+        wicketsTaken.setText(totalWickets+"");
 
         playerName.setText(currentMatchPoints.get_PlayerName());
         playerRuns.setText(currentMatchPoints.get_RunsScored());
@@ -220,12 +228,14 @@ public class CurrentMatchAdapter extends ArrayAdapter<CurrentMatchPoints> implem
                 String timestamp1= o1.get_ContestJoinTimeStamp();
                 String timestamp2= o2.get_ContestJoinTimeStamp();
 
-                Timestamp tst1 = Timestamp.valueOf(timestamp1);
-                Timestamp tst2 = Timestamp.valueOf(timestamp2);
+                Date dat1 = new Date(timestamp1);
+                Date dat2 = new Date(timestamp2);
+//                Timestamp tst1 = Timestamp.valueOf(timestamp1);
+//                Timestamp tst2 = Timestamp.valueOf(timestamp2);
 
                 if(cur1 == cur2){
-                    crit1 = tst1.getTime();
-                    crit2 = tst2.getTime();
+                    crit1 = dat1.getTime();
+                    crit2 = dat2.getTime();
                 }
 
                 return (int)(crit1 - crit2);

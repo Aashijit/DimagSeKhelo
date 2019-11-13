@@ -61,6 +61,7 @@ public class MyProfileScreen extends AppCompatActivity {
     DatabaseReference databaseReferenceUpcomingMatches = database.getReference("UpcomingMatches");
     DatabaseReference databaseReferenceContestUser = database.getReference("ContestUser");
     DatabaseReference databaseReferenceContestMaster = database.getReference("ContestMaster");
+    DatabaseReference databaseReferenceMatchStatus = database.getReference("MatchStatus");
 
 
     List<UpcomingMatchesResponse> upcomingMatchesResponseList = new ArrayList<>();
@@ -211,7 +212,7 @@ public class MyProfileScreen extends AppCompatActivity {
             return;
         }
 
-        contestHistoryAdapter= new ContestHistoryAdapter(MyProfileScreen.this,contestHistories);
+        contestHistoryAdapter= new ContestHistoryAdapter(MyProfileScreen.this,contestHistories,databaseReferenceMatchStatus);
         listView.setAdapter(contestHistoryAdapter);
         progressBar.setVisibility(View.GONE);
     }

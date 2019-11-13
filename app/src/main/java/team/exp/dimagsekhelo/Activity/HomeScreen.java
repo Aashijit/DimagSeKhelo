@@ -225,4 +225,9 @@ public class HomeScreen extends AppCompatActivity implements Codes {
         toast.setGravity(Gravity.TOP | Gravity.LEFT, x-3, y);
         toast.show();
     }
+
+    public void goToRulesPage(View view) {
+        Intent intent = new Intent(HomeScreen.this,RulesScreen.class);
+        startActivity(intent);
+    }
 }
