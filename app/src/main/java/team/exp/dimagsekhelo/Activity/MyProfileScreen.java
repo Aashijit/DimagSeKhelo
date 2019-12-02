@@ -42,6 +42,9 @@ import team.exp.dimagsekhelo.WebServiceResponseObjects.UpcomingMatchesResponse;
 
 import static android.Manifest.permission_group.CAMERA;
 
+/**
+ *
+ */
 public class MyProfileScreen extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;

@@ -31,6 +31,9 @@ import team.exp.dimagsekhelo.WebServiceRequestObjects.ContestUserRequest;
 import team.exp.dimagsekhelo.WebServiceRequestObjects.TeamContestRequest;
 import team.exp.dimagsekhelo.WebServiceResponseObjects.UpcomingMatchesResponse;
 
+/**
+ * This is the main dashboard screen, where an user can select the match where he/she wants to join as a player
+ */
 public class HomeScreen extends AppCompatActivity implements Codes {
 
 

@@ -28,6 +28,9 @@ import team.exp.dimagsekhelo.Utils.Codes;
 import team.exp.dimagsekhelo.WebServiceRequestObjects.ContestUserRequest;
 import team.exp.dimagsekhelo.WebServiceResponseObjects.ContestMasterResponse;
 
+/**
+ *This is the contest selection screen where a particular contest needs to be selected
+ */
 public class ContestSelectionScreen extends AppCompatActivity implements Codes {
 
 

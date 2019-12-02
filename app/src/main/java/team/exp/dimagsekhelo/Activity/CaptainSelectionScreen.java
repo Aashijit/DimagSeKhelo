@@ -19,6 +19,9 @@ import team.exp.dimagsekhelo.WebServiceResponseObjects.PlayerResponse;
 
 import static team.exp.dimagsekhelo.Utils.Codes.TEAM;
 
+/**
+ * This class takes care of the Captain Selection Screen
+ */
 public class CaptainSelectionScreen extends AppCompatActivity implements Codes {
 
 
