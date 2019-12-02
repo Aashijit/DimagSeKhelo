@@ -7,13 +7,14 @@
 --
 ### Column Names : 
 ---
->_ContestId:   The unique identifier of a contest 
->_ContestType:  The type of the contest
->_EntryFeePoints:  The entry fee points
->_MatchId:  The match id for which this contest has been created
->_PrizePool:  The total prize pool
->_TotalStrength:  The total strength
->_TotalWinners: The total winners
----
+<ol>
+<li>_ContestId:   The unique identifier of a contest </li>
+<li>_ContestType:  The type of the contest</li>
+<li>>_EntryFeePoints:  The entry fee points</li>
+<li>>_MatchId:  The match id for which this contest has been created</li>
+<li>>_PrizePool:  The total prize pool</li>
+<li>>_TotalStrength:  The total strength</li>
+<li>>_TotalWinners: The total winners</li>
+</ol>
 
 
